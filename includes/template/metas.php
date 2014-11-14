@@ -25,6 +25,11 @@
     	echo "<meta name='description' content=''>";
     	echo "<meta name='keyword' content=''>";
     }
+    case 'error': {
+        echo "<title>Dashboard Error</title>";
+        echo "<meta name='description' content=''>";
+        echo "<meta name='keyword' content=''>";
+    }
     default: {
     	echo "<title>Dashboard Lex Capital</title>";
     	echo "<meta name='description' content=''>";

@@ -6,29 +6,20 @@ function dashboard($scope, $http, $filter){
 	    var resp = confirm('Realmente deseja sair do sistema?'); 
 	    if(resp){top.location.href='includes/login/logoff.php';}
 	};
-	
-}
 
+  $scope.excluir = function(id, type){
+    if(id != null){
+      var resp = confirm("Confirma a exclusão?");
+      if(resp){
+        $scope.url = "includes/db/remove.php";
+        $http.post($scope.url, {'id': id, 'type': type}).success(function(data, status){
+          $scope.refresh();
+        });
+      }
+    }
+  };
 
-
-function operateFormatter(value, row, index) {
-  return [
-      '<a class="edit ml10" href="javascript:void(0)" title="Edit">',
-          '<i class="glyphicon glyphicon-edit"></i>',
-      '</a>',
-      '<a class="remove ml10" href="javascript:void(0)" title="Remove">',
-          '<i class="glyphicon glyphicon-remove"></i>',
-      '</a>'
-  ].join('');
-}
-
-window.operateEvents = {
-  'click .edit': function (e, value, row, index) {
-      alert('You click edit icon, row: ' + JSON.stringify(row));
-      console.log(value, row, index);
-  },
-  'click .remove': function (e, value, row, index) {
-      alert('You click remove icon, row: ' + JSON.stringify(row));
-      console.log(value, row, index);
+  $scope.refresh = function(){
+    $("button[name=refresh]").click();
   }
-};
+}

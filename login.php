@@ -1,13 +1,9 @@
-<?php
-  include_once("includes/template/function.php");
-?>
+<?php include_once("includes/template/function.php"); ?>
 <!DOCTYPE html>
 <html lang="pt" ng-app="myDashboard">
   <head>
-    <?php
-      include_once("includes/template/metas.php");
-      include_once("includes/template/style.php");
-    ?>
+    <?php include_once("includes/template/metas.php"); ?>
+    <?php include_once("includes/template/style.php"); ?>
   </head>
   <body ng-controller="dashboard" id="dashboard">
     <?php include_once("includes/template/menu.php"); ?>
@@ -33,9 +29,7 @@
           <div class="col-md-4">&nbsp;</div>
         </div>
     </div>
-    <?php
-        include_once("includes/template/scripts.php");
-        include_once("includes/template/ga.php");
-    ?>
+    <?php include_once("includes/template/scripts.php"); ?>
+    <?php include_once("includes/template/ga.php"); ?>
   </body>
 </html>

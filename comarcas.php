@@ -1,14 +1,10 @@
-<?php
-  include_once("includes/login/session_admin.php"); 
-  include_once("includes/template/function.php");
-?>
+<?php include_once("includes/login/session_admin.php"); ?> 
+<?php include_once("includes/template/function.php"); ?>
 <!DOCTYPE html>
 <html lang="pt" ng-app="myDashboard">
   <head>
-    <?php
-      include_once("includes/template/metas.php");
-      include_once("includes/template/style.php");
-    ?>
+    <?php include_once("includes/template/metas.php"); ?>
+    <?php include_once("includes/template/style.php"); ?>
   </head>
   <body ng-controller="dashboard" id="dashboard">
     <?php
@@ -40,14 +36,36 @@
       </div>
       <div class="row">
         <div class="col-md-4">
-          <button class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Cadastrar comarcas</button>
-          <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Remover comarcas</button>
+          <a class="btn btn-success" href="includes/modal/comarcas_add.php" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus"></span> Cadastrar comarcas</a>
+          <a class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Remover comarcas</a>
         </div>
       </div>
     </div>
-    <?php
-        include_once("includes/template/scripts.php");
-        include_once("includes/template/ga.php");
-    ?>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            </div> <!-- /.modal-content -->
+        </div> <!-- /.modal-dialog -->
+    </div> <!-- /.modal -->
+    <?php include_once("includes/template/scripts.php"); ?>
+    <script type="text/javascript">
+      function operateFormatter(value, row, index) {
+        return [
+            '<a class="edit ml10" title="Edit" href="includes/modal/comarcas_edit.php?id='+row.id+'&name='+row.name+'" data-toggle="modal" data-target="#myModal">',
+                '<i class="glyphicon glyphicon-edit"></i>',
+            '</a>',
+            '<a class="remove ml10" href="javascript:void(0)" title="Remove">',
+                '<i class="glyphicon glyphicon-remove"></i>',
+            '</a>'
+        ].join('');
+      }
+      window.operateEvents = {
+        'click .remove': function (e, value, row, index) {
+            $("#dashboard").scope().excluir(JSON.stringify(row.id), "comarcas");
+        }
+      };
+    </script>
+    <?php include_once("includes/template/ga.php"); ?>
   </body>
 </html>
