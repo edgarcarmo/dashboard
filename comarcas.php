@@ -26,7 +26,7 @@
               <thead>
                   <tr>
                       <th data-field="state" data-checkbox="true"></th>
-                      <th data-field="id">Item ID</th>
+                      <th data-field="id" data-visible="false">Item ID</th>
                       <th data-field="name">Comarca</th>
                       <th data-field="operate" data-formatter="operateFormatter" data-events="operateEvents">A&ccedil;&otilde;es</th>
                   </tr>
