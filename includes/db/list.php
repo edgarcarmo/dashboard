@@ -1,5 +1,4 @@
 <?php
-	include_once("conection.php");
 	$type = isset($_GET['type']) ? $_GET['type'] : "";
     switch ($type) {
 	    case 'comarcas': {
@@ -9,6 +8,7 @@
 	    	echo null;
 	    }
   	}
+  	include_once("conection.php");
   	$resultado = mysql_query($sql,$conexao) or die ("Erro na seleção da tabela.");
 	while($row = mysql_fetch_array($resultado)) {
 		foreach ($row as $key => $value) {

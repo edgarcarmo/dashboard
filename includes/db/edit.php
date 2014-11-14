@@ -3,9 +3,10 @@
 		$type = isset($_POST['type']) ? $_POST['type'] : "";
 	    switch ($type) {
 		    case 'comarcas': {
+		    	$id = isset($_POST['id']) ? $_POST['id'] : "";
 		    	$name = isset($_POST['name']) ? $_POST['name'] : "";
-			    $sql = "SELECT * FROM `comarcas` WHERE `name` = '$name'";
-			    $sqlInsert = "INSERT INTO `comarcas`(`name`) VALUES ('$name')";
+			    $sql = "SELECT `name` FROM `comarcas` WHERE `name` = '$name' AND `id` <> '$id'";
+			    $sqlUpdate = "UPDATE `comarcas` SET `name` =  '$name' WHERE `id` = '$id'";
 		    }
 		    default: {
 		    	echo null;
@@ -15,9 +16,9 @@
 	    $resultado = mysql_query($sql, $conexao) or die("Não foi possível consultar $type já cadastradas");
 	    if(!mysql_num_rows($resultado) > 0) {
 
-			$resultadoInsert = mysql_query($sqlInsert, $conexao) or die ("Erro na seleção da tabela.");
+			$resultadoUpdate = mysql_query($sqlUpdate, $conexao) or die ("Erro na seleção da tabela.");
 
-			if ($resultadoInsert === TRUE) {
+			if ($resultadoUpdate === TRUE) {
 			    header('location:../../'.$type.'.php');
 			} else {
 			    //echo "Error: " . $sql . "<br>" . $conexao->error;
@@ -35,4 +36,4 @@
 		$url = "$type.php";
 		header('location:../../error.php?error='.$error."&url=".$url);
 	}
- ?>
+?>
