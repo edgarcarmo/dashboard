@@ -12,22 +12,24 @@
     ?>
     <div class="container">
       <div class="col-md-6">
-        <h1>Comarcas</h1>
+        <h1>Usu&#225;rios</h1>
       </div>
     </div>
     <br />
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <table id="table-methods-table" data-toggle="table" data-url="includes/db/list.php?type=comarcas" data-cache="false" 
-                  data-click-to-select="true" data-show-refresh="true"
+          <table id="table-methods-table" data-toggle="table" data-url="includes/db/list.php?type=usuarios" data-cache="false" 
+                  data-click-to-select="true" data-show-refresh="true"  
                   data-show-columns="true" data-search="true" data-select-item-name="toolbar1" 
                   data-show-toggle="true" data-pagination="true">
               <thead>
                   <tr>
                       <th data-field="state" data-checkbox="true"></th>
                       <th data-field="id" data-visible="false">Item ID</th>
-                      <th data-field="name">Comarca</th>
+                      <th data-field="name">Nome</th>
+                      <th data-field="email">E-mail</th>
+                      <th data-field="isadmin">Admin</th>
                       <th data-field="operate" data-formatter="operateFormatter" data-events="operateEvents">A&ccedil;&otilde;es</th>
                   </tr>
               </thead>
@@ -36,8 +38,8 @@
       </div>
       <div class="row">
         <div class="col-md-4">
-          <a class="btn btn-success" href="includes/modal/comarcas_add.php" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus"></span> Cadastrar comarcas</a>
-          <button class="btn btn-danger" id="remove-data" data-method="remove"><span class="glyphicon glyphicon-trash"></span> Remover comarcas</button >
+          <a class="btn btn-success" href="includes/modal/usuarios_add.php" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus"></span> Cadastrar usu&#225;rios</a>
+          <button class="btn btn-danger" id="remove-data" data-method="remove"><span class="glyphicon glyphicon-trash"></span> Remover usu&#225;rios</button >
         </div>
       </div>
     </div>
@@ -51,7 +53,7 @@
     <?php include_once("includes/template/scripts.php"); ?>
     <script type="text/javascript">
       function operateFormatter(value, row, index) {
-        var url = encodeURI("includes/modal/comarcas_edit.php?id="+row.id+"&name="+row.name);
+        var url = encodeURI("includes/modal/usuarios_edit.php?id="+row.id+"&name="+row.name+"&email="+row.email+"&isadmin="+row.isadmin);
         return [
             '<a class="edit ml10" title="Edit" href="'+url+'" data-toggle="modal" data-target="#myModal">',
                 '<i class="glyphicon glyphicon-edit"></i>',
@@ -63,7 +65,7 @@
       }
       window.operateEvents = {
         'click .remove': function (e, value, row, index) {
-            $("#dashboard").scope().excluir(JSON.stringify(row.id), null, "comarcas");
+            $("#dashboard").scope().excluir(JSON.stringify(row.id), null, "usuarios");
         }
       };
     </script>

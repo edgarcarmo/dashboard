@@ -18,7 +18,7 @@
 
         //Comando SQL de verificação de autenticação
         $sql = "SELECT *
-        FROM users
+        FROM usuarios
         WHERE email = '$email'
         AND password = '$password'";
 

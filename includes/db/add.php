@@ -6,6 +6,18 @@
 		    	$name = isset($_POST['name']) ? $_POST['name'] : "";
 			    $sql = "SELECT * FROM `comarcas` WHERE `name` = '$name'";
 			    $sqlInsert = "INSERT INTO `comarcas`(`name`) VALUES ('$name')";
+			    $printError = $name;
+			    break;
+		    }
+		    case 'usuarios': {
+		    	$name = isset($_POST["name"]) ? $_POST["name"] : "";
+				$email = isset($_POST["email"]) ? $_POST["email"] : "";
+				$password = isset($_POST["password"]) ? $_POST["password"] : "";
+				$isAdmin = isset($_POST["isadmin"]) ? filter_var($_POST["isadmin"], FILTER_VALIDATE_BOOLEAN) : 0;
+			    $sql = "SELECT `email` FROM `usuarios` WHERE `email` = '$email'";
+			    $sqlInsert = "INSERT INTO `usuarios` (`name`, `email`, `password`, `isadmin`) VALUES ('$name','$email', '$password', $isAdmin)";
+			    $printError = $email;
+			    break;
 		    }
 		    default: {
 		    	echo null;
@@ -26,7 +38,7 @@
 			    header('location:../../error.php?error='.$error."&url=".$url);
 			}
 		} else {
-			$error = "A $type $name já está cadastrada.";
+			$error = "A $type $printError já está cadastrada.";
 			$url = "$type.php";
 			header('location:../../error.php?error='.$error."&url=".$url);
 		}

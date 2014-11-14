@@ -4,36 +4,43 @@
     	echo "<title>Login Lex Capital</title>";
     	echo "<meta name='description' content=''>";
     	echo "<meta name='keyword' content=''>";
+        break;
     }
     case 'index': {
     	echo "<title>Dashboard Lex Capital</title>";
     	echo "<meta name='description' content=''>";
     	echo "<meta name='keyword' content=''>";
+        break;
     }
     case 'advogados': {
     	echo "<title>Dashboard Advogados</title>";
     	echo "<meta name='description' content=''>";
     	echo "<meta name='keyword' content=''>";
+        break;
     }
     case 'comarcas': {
     	echo "<title>Dashboard Comarcas</title>";
     	echo "<meta name='description' content=''>";
     	echo "<meta name='keyword' content=''>";
+        break;
     }
     case 'usuarios': {
     	echo "<title>Dashboard Usu&#225;rios</title>";
     	echo "<meta name='description' content=''>";
     	echo "<meta name='keyword' content=''>";
+        break;
     }
     case 'error': {
         echo "<title>Dashboard Error</title>";
         echo "<meta name='description' content=''>";
         echo "<meta name='keyword' content=''>";
+        break;
     }
     default: {
     	echo "<title>Dashboard Lex Capital</title>";
     	echo "<meta name='description' content=''>";
     	echo "<meta name='keyword' content=''>";
+        break;
     }
   }
 ?>

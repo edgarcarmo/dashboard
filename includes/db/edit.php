@@ -7,6 +7,18 @@
 		    	$name = isset($_POST['name']) ? $_POST['name'] : "";
 			    $sql = "SELECT `name` FROM `comarcas` WHERE `name` = '$name' AND `id` <> '$id'";
 			    $sqlUpdate = "UPDATE `comarcas` SET `name` =  '$name' WHERE `id` = '$id'";
+			    $printError = $name;
+			    break;
+		    }
+		    case 'usuarios': {
+		    	$id = isset($_POST['id']) ? $_POST['id'] : "";
+			 	$name = isset($_POST['name']) ? $_POST['name'] : "";
+			 	$email = isset($_POST['email']) ? $_POST['email'] : "";
+			 	$isadmin = isset($_POST["isadmin"]) ? filter_var($_POST["isadmin"], FILTER_VALIDATE_BOOLEAN) : 0;
+			    $sql = "SELECT `email` FROM `usuarios` WHERE `email` = '$email' AND `id` <> '$id'";
+			    $sqlUpdate = "UPDATE `usuarios` SET `name` =  '$name', `email` =  '$email', `isadmin` =  '$isadmin' WHERE `id` = '$id'";
+			    $printError = $email;
+			    break;
 		    }
 		    default: {
 		    	echo null;
@@ -27,7 +39,7 @@
 			    header('location:../../error.php?error='.$error."&url=".$url);
 			}
 		} else {
-			$error = "A $type $name já está cadastrada.";
+			$error = "A $type $sqlUpdate já está cadastrada.";
 			$url = "$type.php";
 			header('location:../../error.php?error='.$error."&url=".$url);
 		}

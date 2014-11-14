@@ -3,9 +3,15 @@
     switch ($type) {
 	    case 'comarcas': {
 	    	$sql = "SELECT * FROM `comarcas` WHERE 1 ORDER BY `name` asc";
+	    	break;
+	    }
+	    case 'usuarios': {
+	    	$sql = "SELECT * FROM `usuarios` WHERE 1 ORDER BY `name` asc, `email` asc";
+	    	break;
 	    }
 	    default: {
 	    	echo null;
+	    	break;
 	    }
   	}
   	include_once("conection.php");

@@ -6,9 +6,15 @@
 	switch ($type) {
 	    case 'comarcas': {
 	    	$sql = "DELETE FROM `comarcas` WHERE `id` = $id";
+	    	break;
+	    }
+	    case 'usuarios': {
+	    	$sql = "DELETE FROM `usuarios` WHERE `id` = $id";
+	    	break;
 	    }
 	    default: {
 	    	echo null;
+	    	break;
 	    }
   	}
   	include_once("conection.php");
