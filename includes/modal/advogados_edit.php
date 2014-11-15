@@ -4,9 +4,9 @@
 	$oabuf = $_GET["oabuf"];
 	$name = $_GET["name"];
 	$cpf = $_GET["cpf"];
-	$phone = $_GET["phone"];
-	$cellphone = $_GET["cellphone"];
-	$email = $_GET["email"];
+	$phone = isset($_GET['phone']) ? $_GET['phone'] : "";
+	$cellphone = isset($_GET['cellphone']) ? $_GET['cellphone'] : "";
+	$email = isset($_GET['email']) ? $_GET['email'] : "";
 	$cep = isset($_GET['cep']) ? $_GET['cep'] : "";
 	$address = isset($_GET['address']) ? $_GET['address'] : "";
 	$number = isset($_GET['number']) ? $_GET['number'] : "";
