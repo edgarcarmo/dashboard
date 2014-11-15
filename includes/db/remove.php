@@ -12,6 +12,10 @@
 	    	$sql = "DELETE FROM `usuarios` WHERE `id` = $id";
 	    	break;
 	    }
+	    case 'advogados': {
+	    	$sql = "DELETE FROM `advogados` WHERE `id` = $id";
+	    	break;
+	    }
 	    default: {
 	    	echo null;
 	    	break;

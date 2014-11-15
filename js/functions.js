@@ -45,6 +45,17 @@ $('#remove-data').click(function () {
     $table = $('#table-methods-table').bootstrapTable({data: getRows()});
     var selects = $table.bootstrapTable('getSelections');
     ids = $.map(selects, function (row) {return row.id;});
-    $("#dashboard").scope().excluir(null, ids, "comarcas");
+    $("#dashboard").scope().excluir(null, ids, $("#typeRemove").val());
     $table.bootstrapTable('remove', {field: 'id', values: ids});
 });
+
+function rowStyle(row, index) {
+    var classes = ['active'];
+
+    if (index % 2 === 0 && index / 2 < classes.length) {
+        return {
+            classes: classes[index / 2]
+        };
+    }
+    return {};
+}

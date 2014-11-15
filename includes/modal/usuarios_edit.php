@@ -8,7 +8,7 @@
 	<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
 	<h4 class="modal-title">Usu&#225;rios</h4>
 </div>
-<form role="form" action="includes/db/edit.php" method="post" id="add_sumbit" data-toggle="validator">
+<form role="form" action="includes/db/edit.php" method="post" id="edit_sumbit" data-toggle="validator">
 	<div class="modal-body">
 		<div class="container-fluid">
 			<div class="row">

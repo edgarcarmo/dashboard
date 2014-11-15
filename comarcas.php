@@ -22,13 +22,13 @@
           <table id="table-methods-table" data-toggle="table" data-url="includes/db/list.php?type=comarcas" data-cache="false" 
                   data-click-to-select="true" data-show-refresh="true"
                   data-show-columns="true" data-search="true" data-select-item-name="toolbar1" 
-                  data-show-toggle="true" data-pagination="true">
+                  data-show-toggle="true" data-pagination="true" data-row-style="rowStyle">
               <thead>
                   <tr>
-                      <th data-field="state" data-checkbox="true"></th>
-                      <th data-field="id" data-visible="false">Item ID</th>
-                      <th data-field="name">Comarca</th>
-                      <th data-field="operate" data-formatter="operateFormatter" data-events="operateEvents">A&ccedil;&otilde;es</th>
+                      <th data-field="state" data-checkbox="true" data-halign="center" data-align="center"></th>
+                      <th data-field="id" data-visible="false" data-halign="center" data-align="center">Item ID</th>
+                      <th data-field="name" data-halign="center" data-align="center" data-sortable="true">Comarca</th>
+                      <th data-field="operate" data-formatter="operateFormatter" data-events="operateEvents" data-halign="center" data-align="center">A&ccedil;&otilde;es</th>
                   </tr>
               </thead>
           </table>
@@ -48,6 +48,7 @@
             </div> <!-- /.modal-content -->
         </div> <!-- /.modal-dialog -->
     </div> <!-- /.modal -->
+    <input type="hidden" name="type" id="typeRemove" value="comarcas"/>
     <?php include_once("includes/template/scripts.php"); ?>
     <script type="text/javascript">
       function operateFormatter(value, row, index) {

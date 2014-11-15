@@ -1,3 +1,4 @@
+<?php include_once("../template/function.php"); ?>
 <?php
 	if($_SERVER['REQUEST_METHOD'] == "POST") {
 		$type = isset($_POST['type']) ? $_POST['type'] : "";
@@ -17,6 +18,19 @@
 			    $sql = "SELECT `email` FROM `usuarios` WHERE `email` = '$email'";
 			    $sqlInsert = "INSERT INTO `usuarios` (`name`, `email`, `password`, `isadmin`) VALUES ('$name','$email', '$password', $isAdmin)";
 			    $printError = $email;
+			    break;
+		    }
+		    case 'advogados': {
+		    	$oab = isset($_POST["oab"]) ? $_POST["oab"] : "";
+				$oabuf = isset($_POST["oabuf"]) ? $_POST["oabuf"] : "";
+				$cpf = isset($_POST["cpf"]) ? replaceAll($_POST["cpf"]) : "";
+				$name = isset($_POST["name"]) ? $_POST["name"] : "";
+				$phone = isset($_POST["phone"]) ? replaceAll($_POST["phone"]) : "";
+				$cellphone = isset($_POST["cellphone"]) ? replaceAll($_POST["cellphone"]) : "";
+				$email = isset($_POST["email"]) ? $_POST["email"] : "";
+				$sql = "SELECT `oab`FROM `advogados` WHERE `oab` = '$oab'";
+			    $sqlInsert = "INSERT INTO `advogados` (`oab`, `oabuf`, `cpf`, `name`, `phone`, `cellphone`, `email`) VALUES ('$oab','$oabuf', '$cpf', '$name', '$phone', '$cellphone', '$email')";
+			    $printError = $oab;
 			    break;
 		    }
 		    default: {

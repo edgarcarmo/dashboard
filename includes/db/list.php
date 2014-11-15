@@ -9,6 +9,10 @@
 	    	$sql = "SELECT * FROM `usuarios` WHERE 1 ORDER BY `name` asc, `email` asc";
 	    	break;
 	    }
+	    case 'advogados': {
+	    	$sql = "SELECT * FROM `advogados` WHERE 1 ORDER BY `name` asc";
+	    	break;
+	    }
 	    default: {
 	    	echo null;
 	    	break;

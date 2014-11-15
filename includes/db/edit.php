@@ -20,6 +20,27 @@
 			    $printError = $email;
 			    break;
 		    }
+		    case 'advogados': {
+		    	$id = isset($_POST['id']) ? $_POST['id'] : "";
+			 	$oab = isset($_POST['oab']) ? $_POST['oab'] : "";
+				$oabuf = isset($_POST['oabuf']) ? $_POST['oabuf'] : "";
+				$name = isset($_POST['name']) ? $_POST['name'] : "";
+				$cpf = isset($_POST['cpf']) ? $_POST['cpf'] : "";
+				$phone = isset($_POST['phone']) ? $_POST['phone'] : "";
+				$cellphone = isset($_POST['cellphone']) ? $_POST['cellphone'] : "";
+				$email = isset($_POST['email']) ? $_POST['email'] : "";
+				$cep = isset($_POST['cep']) ? $_POST['cep'] : "";
+				$address = isset($_POST['address']) ? $_POST['address'] : "";
+				$number = isset($_POST['number']) ? $_POST['number'] : "";
+				$complement = isset($_POST['complement']) ? $_POST['complement'] : "";
+				$neighborhood = isset($_POST['neighborhood']) ? $_POST['neighborhood'] : "";
+				$city = isset($_POST['city']) ? $_POST['city'] : "";
+				$state = isset($_POST['state']) ? $_POST['state'] : "";
+			    $sql = "SELECT `oab`FROM `advogados` WHERE `oab` = '$oab' AND `id` <> '$id'";
+			    $sqlUpdate = "UPDATE `advogados` SET `oab` =  '$oab', `oabuf` =  '$oabuf', `name` =  '$name', `cpf` =  '$cpf', `phone` =  '$phone', `cellphone` =  '$cellphone', `email` =  '$email', `cep` =  '$cep', `address` =  '$address', `number` =  '$number', `complement` =  '$complement', `neighborhood` =  '$neighborhood', `city` =  '$city', `state` =  '$state' WHERE `id` = '$id'";
+			    $printError = $oab;
+			    break;
+		    }
 		    default: {
 		    	echo null;
 		    }
