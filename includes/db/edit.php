@@ -25,11 +25,11 @@
 			 	$oab = isset($_POST['oab']) ? $_POST['oab'] : "";
 				$oabuf = isset($_POST['oabuf']) ? $_POST['oabuf'] : "";
 				$name = isset($_POST['name']) ? $_POST['name'] : "";
-				$cpf = isset($_POST['cpf']) ? $_POST['cpf'] : "";
-				$phone = isset($_POST['phone']) ? $_POST['phone'] : "";
-				$cellphone = isset($_POST['cellphone']) ? $_POST['cellphone'] : "";
+				$cpf = isset($_POST['cpf']) ? replaceAll($_POST['cpf']) : "";
+				$phone = isset($_POST['phone']) ? replaceAll($_POST['phone']) : "";
+				$cellphone = isset($_POST['cellphone']) ? replaceAll($_POST['cellphone']) : "";
 				$email = isset($_POST['email']) ? $_POST['email'] : "";
-				$cep = isset($_POST['cep']) ? $_POST['cep'] : "";
+				$cep = isset($_POST['cep']) ? replaceAll($_POST['cep']) : "";
 				$address = isset($_POST['address']) ? $_POST['address'] : "";
 				$number = isset($_POST['number']) ? $_POST['number'] : "";
 				$complement = isset($_POST['complement']) ? $_POST['complement'] : "";
