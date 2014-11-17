@@ -1,7 +1,7 @@
 Lista Comarcas
 Mostar o campo isadmin como checkbox
 
-Add advogados
+Add e Editar advogados
 Validar aob, cpf e e-mail e retornar o ero de qual esta duplicado.
 
 Modal Add Advogados
@@ -9,11 +9,3 @@ Validar cpf valido
 
 Listas
 Validar campos obrigatorios nas listas
-Arrumar o cor sim cor nao
-
-
-Listas Advogados
-colocar mascara nos campos da lista 
-
-Editar Advogados
-Busca de CEP 

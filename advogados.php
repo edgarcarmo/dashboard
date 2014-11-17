@@ -20,9 +20,9 @@
       <div class="row">
         <div class="col-md-12">
           <table id="table-methods-table" data-toggle="table" data-url="includes/db/list.php?type=advogados" data-cache="false" 
-                  data-click-to-select="true" data-show-refresh="true"  
-                  data-show-columns="true" data-search="true" data-select-item-name="toolbar1" 
-                  data-show-toggle="true" data-pagination="true" data-row-style="rowStyle">
+                  data-click-to-select="true" data-show-refresh="true"
+                  data-show-columns="true" data-search="true" data-select-item-name="toolbar1"
+                  data-show-toggle="true" data-pagination="true" >
               <thead>
                   <tr>
                       <th data-field="state" data-checkbox="true" data-halign="center" data-align="center"></th>
@@ -30,17 +30,17 @@
                       <th data-field="name" data-halign="center" data-align="center" data-sortable="true">Nome</th>
                       <th data-field="oab" data-halign="center" data-align="center" data-sortable="true">OAB</th>
                       <th data-field="oabuf" data-halign="center" data-align="center" data-sortable="true">OAB UF</th>
-                      <th data-field="cpf" data-halign="center" data-align="center" data-sortable="true">CPF</th>
-                      <th data-field="phone" data-halign="center" data-align="center" data-sortable="true">Telefone</th>
-                      <th data-field="cellphone" data-halign="center" data-align="center" data-sortable="true">Celular</th>
+                      <th class="mask_cpf" data-field="cpf" data-field="cpf" data-halign="center" data-align="center" data-sortable="true">CPF</th>
+                      <th class="mask_phone" data-field="phone" data-halign="center" data-align="center" data-sortable="true">Telefone</th>
+                      <th class="mask_phone" data-field="cellphone" data-halign="center" data-align="center" data-sortable="true">Celular</th>
                       <th data-field="email" data-halign="center" data-align="center" data-sortable="true">E-mail</th>
-                      <th data-field="cep" data-visible="false" data-halign="center" data-align="center" data-sortable="true">CEP</th>
-                      <th data-field="address" data-visible="false" data-halign="center" data-align="center" data-sortable="true">Endere&#231;o</th>  
-                      <th data-field="number" data-visible="false" data-halign="center" data-align="center" data-sortable="true">N&#250;mero</th>  
-                      <th data-field="complement" data-visible="false" data-halign="center" data-align="center" data-sortable="true">Complemento</th>  
-                      <th data-field="neighborhood" data-visible="false" data-halign="center" data-align="center" data-sortable="true">Bairro</th>  
-                      <th data-field="city" data-visible="false"  data-halign="center" data-align="center" data-sortable="true">Cidade</th>  
-                      <th data-field="state" data-halign="center" data-align="center" data-sortable="true">Estado</th>    
+                      <th class="mask_cep" data-field="cep" data-visible="false" data-halign="center" data-align="center" data-sortable="true">CEP</th>
+                      <th data-field="address" data-visible="false" data-halign="center" data-align="center" data-sortable="true">Endere&#231;o</th>
+                      <th data-field="number" data-visible="false" data-halign="center" data-align="center" data-sortable="true">N&#250;mero</th>
+                      <th data-field="complement" data-visible="false" data-halign="center" data-align="center" data-sortable="true">Complemento</th>
+                      <th data-field="neighborhood" data-visible="false" data-halign="center" data-align="center" data-sortable="true">Bairro</th>
+                      <th data-field="city" data-visible="false"  data-halign="center" data-align="center" data-sortable="true">Cidade</th>
+                      <th data-field="state" data-halign="center" data-align="center" data-sortable="true">Estado</th>
                       <th data-field="operate" data-formatter="operateFormatter" data-events="operateEvents" data-halign="center" data-align="center">A&ccedil;&otilde;es</th>
                   </tr>
               </thead>

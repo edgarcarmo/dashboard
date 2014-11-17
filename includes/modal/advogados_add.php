@@ -92,20 +92,4 @@
 	</div>
 	<input type="hidden" name="type" value="advogados"/>
 </form>
-<script type="text/javascript">
-	$(document).ready(function(){
-	    $('.mask_cpf').mask('999.999.999-99');
-	    $(".mask_phone").mask("(99)9999-9999?9").ready(function(event) {
-        var target, phone, element;
-        target = (event.currentTarget) ? event.currentTarget : event.srcElement;
-        phone = target.value.replace(/\D/g, '');
-        element = $(target);
-        element.unmask();
-        if(phone.length > 10) {
-            element.mask("(99)99999-999?9");
-        } else {
-            element.mask("(99)9999-9999?9");
-        }
-    });
-	});
-</script>
+<script src="js/functions_modal.js"></script>

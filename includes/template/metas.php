@@ -1,4 +1,4 @@
-<?php  
+<?php
 	switch (receberPagina($_SERVER['REQUEST_URI'])) {
     case 'login': {
     	echo "<title>Login Lex Capital</title>";
@@ -47,4 +47,4 @@
 <meta name="author" content="Adauto C Fernandes">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">	
+<meta name="viewport" content="width=device-width, initial-scale=1">

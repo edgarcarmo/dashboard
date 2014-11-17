@@ -1,3 +1,4 @@
+<?php include_once("../template/function.php"); ?>
 <?php
 	$type = isset($_GET['type']) ? $_GET['type'] : "";
     switch ($type) {
@@ -21,7 +22,18 @@
   	include_once("conection.php");
   	$resultado = mysql_query($sql,$conexao) or die ("Erro na seleção da tabela.");
 	while($row = mysql_fetch_array($resultado)) {
-		foreach ($row as $key => $value) {
+		if(isset($row['cpf'])){
+			$row['cpf'] = mask($row['cpf'],'###.###.###-##');
+		}
+		if(isset($row['phone'])){
+			$row['phone'] = valid9digito($row['phone']);
+		}
+		if(isset($row['cellphone'])){
+			$row['cellphone'] = valid9digito($row['cellphone']);
+		}
+		if(isset($row['cep'])){
+			$row['cep'] = mask($row['cep'],'#####-###');
+		}foreach ($row as $key => $value) {
 			$arr[$key] = $value;
 		}
 		$main_arr[] = $arr;

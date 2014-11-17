@@ -3,7 +3,7 @@ var appDashboard = angular.module("myDashboard", []);
 function dashboard($scope, $http, $filter){
 
 	$scope.logout = function() {
-	    var resp = confirm('Realmente deseja sair do sistema?'); 
+	    var resp = confirm('Realmente deseja sair do sistema?');
 	    if(resp){top.location.href='includes/login/logoff.php';}
 	};
 
@@ -58,4 +58,33 @@ function rowStyle(row, index) {
         };
     }
     return {};
+}
+
+
+function replaceAll(str, de, para){
+    var pos = str.indexOf(de);
+    while (pos > -1){
+    str = str.replace(de, para);
+    pos = str.indexOf(de);
+  }
+    return (str);
+}
+
+function consultarCEP(cep) {
+  cep = replaceAll(cep, "-", "");
+  if (cep != null || cep != "") {
+     $.ajax({
+        dataType: 'json',
+        url: 'http://cep.correiocontrol.com.br/'+cep+'.json',
+        success: function(data){
+          $('#address').val(data.logradouro);
+          $('#neighborhood').val(data.bairro);
+          $('#city').val(data.localidade);
+          $('#state').val(data.uf);
+          $('#number').focus();
+        },
+        error: function(msg) {
+        }
+      });
+  }
 }

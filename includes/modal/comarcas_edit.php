@@ -26,9 +26,4 @@
 	<input type="hidden" name="id" value="<?php echo $id; ?>"/>
 	<input type="hidden" name="type" value="comarcas"/>
 </form>
-<script type="text/javascript">
-	$('#myModal').on('hidden.bs.modal', function () {
-        $(this).removeData('bs.modal');
-        $("#dashboard").scope().refresh();
-    });
-</script>
+<script src="js/functions_modal.js"></script>

@@ -1,3 +1,4 @@
+<?php include_once("../template/function.php"); ?>
 <?php
 	if($_SERVER['REQUEST_METHOD'] == "POST") {
 		$type = isset($_POST['type']) ? $_POST['type'] : "";

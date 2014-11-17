@@ -1,4 +1,4 @@
-<?php include_once("includes/login/session_admin.php"); ?> 
+<?php include_once("includes/login/session_admin.php"); ?>
 <?php include_once("includes/template/function.php"); ?>
 <!DOCTYPE html>
 <html lang="pt" ng-app="myDashboard">
@@ -22,7 +22,7 @@
           <table id="table-methods-table" data-toggle="table" data-url="includes/db/list.php?type=comarcas" data-cache="false" 
                   data-click-to-select="true" data-show-refresh="true"
                   data-show-columns="true" data-search="true" data-select-item-name="toolbar1" 
-                  data-show-toggle="true" data-pagination="true" data-row-style="rowStyle">
+                  data-show-toggle="true" data-pagination="true">
               <thead>
                   <tr>
                       <th data-field="state" data-checkbox="true" data-halign="center" data-align="center"></th>
