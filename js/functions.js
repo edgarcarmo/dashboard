@@ -84,6 +84,12 @@ function consultarCEP(cep) {
           $('#number').focus();
         },
         error: function(msg) {
+          $('#address').val("");
+          $('#neighborhood').val("");
+          $('#city').val("");
+          $('#state').val("");
+          $('#address').focus();
+          alert("CEP não encontrado!");
         }
       });
   }

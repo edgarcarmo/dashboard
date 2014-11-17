@@ -7,7 +7,7 @@
 		    	$name = isset($_POST['name']) ? $_POST['name'] : "";
 			    $sql = "SELECT * FROM `comarcas` WHERE `name` = '$name'";
 			    $sqlInsert = "INSERT INTO `comarcas`(`name`) VALUES ('$name')";
-			    $printError = $name;
+			    $printError = "A comcarca ".$name;
 			    break;
 		    }
 		    case 'usuarios': {
@@ -17,20 +17,29 @@
 				$isAdmin = isset($_POST["isadmin"]) ? filter_var($_POST["isadmin"], FILTER_VALIDATE_BOOLEAN) : 0;
 			    $sql = "SELECT `email` FROM `usuarios` WHERE `email` = '$email'";
 			    $sqlInsert = "INSERT INTO `usuarios` (`name`, `email`, `password`, `isadmin`) VALUES ('$name','$email', '$password', $isAdmin)";
-			    $printError = $email;
+			    $printError = "O usuário ".$email;
 			    break;
 		    }
 		    case 'advogados': {
-		    	$oab = isset($_POST["oab"]) ? $_POST["oab"] : "";
-				$oabuf = isset($_POST["oabuf"]) ? $_POST["oabuf"] : "";
-				$cpf = isset($_POST["cpf"]) ? replaceAll($_POST["cpf"]) : "";
-				$name = isset($_POST["name"]) ? $_POST["name"] : "";
-				$phone = isset($_POST["phone"]) ? replaceAll($_POST["phone"]) : "";
-				$cellphone = isset($_POST["cellphone"]) ? replaceAll($_POST["cellphone"]) : "";
-				$email = isset($_POST["email"]) ? $_POST["email"] : "";
-				$sql = "SELECT `oab`FROM `advogados` WHERE `oab` = '$oab'";
-			    $sqlInsert = "INSERT INTO `advogados` (`oab`, `oabuf`, `cpf`, `name`, `phone`, `cellphone`, `email`) VALUES ('$oab','$oabuf', '$cpf', '$name', '$phone', '$cellphone', '$email')";
-			    $printError = $oab;
+		    	$id = isset($_POST['id']) ? $_POST['id'] : "";
+			 	$oab = isset($_POST['oab']) ? $_POST['oab'] : "";
+				$oabuf = isset($_POST['oabuf']) ? $_POST['oabuf'] : "";
+				$name = isset($_POST['name']) ? $_POST['name'] : "";
+				$cpf = isset($_POST['cpf']) ? replaceAll($_POST['cpf']) : "";
+				$phone = isset($_POST['phone']) ? replaceAll($_POST['phone']) : "";
+				$cellphone = isset($_POST['cellphone']) ? replaceAll($_POST['cellphone']) : "";
+				$email = isset($_POST['email']) ? $_POST['email'] : "";
+				$cep = isset($_POST['cep']) ? replaceAll($_POST['cep']) : "";
+				$address = isset($_POST['address']) ? $_POST['address'] : "";
+				$number = isset($_POST['number']) ? $_POST['number'] : "";
+				$complement = isset($_POST['complement']) ? $_POST['complement'] : "";
+				$neighborhood = isset($_POST['neighborhood']) ? $_POST['neighborhood'] : "";
+				$city = isset($_POST['city']) ? $_POST['city'] : "";
+				$state = isset($_POST['state']) ? $_POST['state'] : "";
+				$sqlOab = "SELECT `oab`FROM `advogados` WHERE `oab` = '$oab'";
+				$sqlCpf = "SELECT `cpf`FROM `advogados` WHERE `cpf` = '$cpf'";
+				$sqlEmai = "SELECT `email`FROM `advogados` WHERE `email` = '$email'";
+			    $sqlInsert = "INSERT INTO `advogados` (`oab`, `oabuf`, `cpf`, `name`, `phone`, `cellphone`, `email` ,`cep` ,`address` ,`number` ,`complement` ,`neighborhood` ,`city` ,`state`) VALUES ('$oab','$oabuf', '$cpf', '$name', '$phone', '$cellphone', '$email','$cep' ,'$address' ,'$number' ,'$complement' ,'$neighborhood' ,'$city' ,'$state')";
 			    break;
 		    }
 		    default: {
@@ -38,11 +47,39 @@
 		    }
 	  	}
 	    include_once("conection.php");
-	    $resultado = mysql_query($sql, $conexao) or die("Não foi possível consultar $type já cadastradas");
+     	switch ($type) {
+		    case 'advogados': {
+		    	$sqlOab = "SELECT `oab`FROM `advogados` WHERE `oab` = '$oab'";
+				$resultadoOab = mysql_query($sqlOab, $conexao) or die("Não foi possível consultar $type já cadastradas");
+				if(mysql_num_rows($resultadoOab) > 0){
+					$printError = "O registro da oab ".$oab;
+					$resultado = $resultadoOab;
+					break;
+				}
+
+				$sqlCpf = "SELECT `cpf`FROM `advogados` WHERE `cpf` = '$cpf'";
+				$resultadoCpf = mysql_query($sqlCpf, $conexao) or die("Não foi possível consultar $type já cadastradas");
+				if(mysql_num_rows($resultadoCpf) > 0){
+					$printError = "O cpf ".$cpf;
+					$resultado = $resultadoCpf;
+					break;
+				}
+
+				$sqlEmail = "SELECT `email`FROM `advogados` WHERE `email` = '$email'";
+				$resultadoEmail = mysql_query($sqlEmail, $conexao) or die("Não foi possível consultar $type já cadastradas");
+				if(mysql_num_rows($resultadoEmail) > 0){
+					$printError = "O email ".$email;
+					$resultado = $resultadoEmail;
+					break;
+				}
+				break;
+		    }
+		    default: {
+		    	$resultado = mysql_query($sql, $conexao) or die("Não foi possível consultar $type já cadastradas");
+		    }
+	  	}
 	    if(!mysql_num_rows($resultado) > 0) {
-
 			$resultadoInsert = mysql_query($sqlInsert, $conexao) or die ("Erro na seleção da tabela.");
-
 			if ($resultadoInsert === TRUE) {
 			    header('location:../../'.$type.'.php');
 			} else {
@@ -52,7 +89,7 @@
 			    header('location:../../error.php?error='.$error."&url=".$url);
 			}
 		} else {
-			$error = "A $type $printError já está cadastrada.";
+			$error = "$printError já está cadastrada.";
 			$url = "$type.php";
 			header('location:../../error.php?error='.$error."&url=".$url);
 		}
