@@ -91,13 +91,13 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="phone">Telefone</label>
-									<input type="text" id="phone" name="phone" class="form-control mask_phone" placeholder="Telefone" pattern="\([0-9]{2}\)[0-9]{4}-[0-9]{4,5}" value="<?php echo $phone; ?>"/>
+									<input type="text" id="phone" name="phone" class="form-control mask_phone" placeholder="Telefone" pattern="\([0-9]{2}\)\s[0-9]{4}-[0-9]{4,5}" value="<?php echo $phone; ?>"/>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="cellphone">Celular</label>
-									<input type="text" id="cellphone" name="cellphone" class="form-control mask_phone" placeholder="Celular" pattern="\([0-9]{2}\)[0-9]{4}-[0-9]{4,5}" value="<?php echo $cellphone; ?>"/>
+									<input type="text" id="cellphone" name="cellphone" class="form-control mask_phone" placeholder="Celular" pattern="\([0-9]{2}\)\s[0-9]{4}-[0-9]{4,5}" value="<?php echo $cellphone; ?>"/>
 								</div>
 							</div>
 						</div>
