@@ -69,10 +69,10 @@
         teste = row;
         var url = encodeURI("includes/modal/advogados_edit.php?id="+row.id+"&oab="+row.oab+"&oabuf="+row.oabuf+"&name="+row.name+"&cpf="+row.cpf+"&phone="+row.phone+"&cellphone="+row.cellphone+"&email="+row.email+"&cep="+row.cep+"&address="+row.address+"&number="+row.number+"&complement="+row.complement+"&neighborhood="+row.neighborhood+"&city="+row.city+"&state="+row.state);
         return [
-            '<a class="edit ml10" title="Edit" href="'+url+'" data-toggle="modal" data-target="#myModal">',
+            '<a class="edit ml10" title="Editar" href="'+url+'" data-toggle="modal" data-target="#myModal">',
                 '<i class="glyphicon glyphicon-edit"></i>',
             '</a>',
-            '<a class="remove ml10" href="javascript:void(0)" title="Remove">',
+            '<a class="remove ml10" href="javascript:void(0)" title="Excluir advogado">',
                 '<i class="glyphicon glyphicon-remove"></i>',
             '</a>'
         ].join('');
