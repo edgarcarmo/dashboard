@@ -6,4 +6,8 @@ CREATE TABLE usuarios (
 	isadmin TINYINT NOT NULL
 ) ENGINE = innodb
 
-INSERT usuarios(name, email, password, isadmin) VALUES ('Administrador', 'atocf1@gmail.com', '123456', 1)
+INSERT usuarios(name, email, password, isadmin) VALUES ('Adauto', 'atocf1@gmail.com', '854916', 1)
+
+INSERT usuarios(name, email, password, isadmin) VALUES ('Administrador', 'mario@moreirafilho.com.br', '123456', 1)
+
+
