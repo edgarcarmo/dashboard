@@ -74,14 +74,14 @@ function consultarCEP(cep) {
   cep = replaceAll(cep, "-", "");
   if (cep != null || cep != "") {
       var $modal = $('.js-loading-bar'), $bar = $modal.find('.progress-bar');
-      $modal.modal('show');
-      $bar.addClass('animate');
+      $("#search").removeClass("glyphicon-search").addClass("glyphicon-refresh glyphicon-refresh-animate");
+      $("#textSearch").empty().append("&#160;Buscando...");
       $.ajax({
         dataType: 'json',
         url: 'http://cep.correiocontrol.com.br/'+cep+'.json',
         success: function(data){
-          $bar.removeClass('animate');
-          $modal.modal('hide');
+          $("#search").removeClass("glyphicon-refresh glyphicon-refresh-animate").addClass("glyphicon-search");
+          $("#textSearch").empty().append("&#160;Buscar&#160;&#160;&#160;&#160;&#160;");
           $('#address').val(data.logradouro);
           $('#neighborhood').val(data.bairro);
           $('#city').val(data.localidade);
@@ -89,8 +89,8 @@ function consultarCEP(cep) {
           $('#number').focus();
         },
         error: function(msg) {
-          $bar.removeClass('animate');
-          $modal.modal('hide');
+          $("#search").removeClass("glyphicon-refresh glyphicon-refresh-animate").addClass("glyphicon-search");
+          $("#textSearch").empty().append("&#160;Buscar&#160;&#160;&#160;&#160;&#160;");
           $('#address').val("");
           $('#neighborhood').val("");
           $('#city').val("");

@@ -18,11 +18,5 @@ $(document).ready(function(){
             element.mask("(99) 9999-9999?9");
         }
     });
-
-    $('.js-loading-bar').modal({
-      backdrop: 'static',
-      show: false,
-      keyboard: false
-    });
 });
 

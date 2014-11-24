@@ -102,14 +102,14 @@
                     </div>
                     <div class="panel-body">
                         <div class="row">
-							<div class="col-md-6">
+							<div class="col-md-7">
 								<div class="form-group">
 									<label for="cep">CEP</label>
 									<div class="input-group">
 										<input type="text" id="cep" name="cep" class="form-control mask_cep"/>
 										<span class="input-group-btn">
 	                                        <a class="btn btn-default" title="Localizar endereço" id="getCep" onclick="consultarCEP($('#cep').val())">
-	                                            <span class="glyphicon glyphicon-search"></span>
+	                                            <span id="search" class="glyphicon glyphicon-search"></span><span id="textSearch">&#160;Buscar&#160;&#160;&#160;&#160;&#160;</span>
 	                                        </a>
 	                                    </span>
 	                                </div>
@@ -206,19 +206,6 @@
     </div>
    <input type="hidden" name="type" value="advogados"/>
 </form>
-
-<div class="modal js-loading-bar" style="margin-top: 210px;">
- <div class="modal-dialog">
-   <div class="modal-content">
-     <div class="modal-body">
-       <div class="progress progress-popup">
-        <div class="progress-bar"></div>
-       </div>
-     </div>
-   </div>
- </div>
-</div>
-
 <script src="js/functions_modal.js"></script>
 
 
