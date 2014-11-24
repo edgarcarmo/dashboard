@@ -4,6 +4,7 @@
     case 'login': {$nav0 = true; break;}
     case 'index': {$nav1 = true; break;}
     case 'advogados': {$nav2 = true; break;}
+    case 'contas': {$nav3 = true; break;}
     case 'comarcas': {$nav9 = true; break;}
     case 'usuarios': {$nav9 = true; break;}
     default: {$nav1 = true; break;}
@@ -26,6 +27,7 @@
       <ul class="nav navbar-nav">
         <li <?php if(isset($nav1)) {echo 'class="active"';} ?>><a href="index.php">Home</a></li>
         <li <?php if(isset($nav2)) {echo 'class="active"';} ?>><a href="advogados.php">Advogados</a></li>
+        <li <?php if(isset($nav3)) {echo 'class="active"';} ?>><a href="contas.php">Contas</a></li>
         <li <?php if(isset($nav9)) {echo 'class="dropdown active"';} else {echo 'class="dropdown"';}?>>
           <a href="#" data-toggle="dropdown" id="adminMenu">Administra&ccedil;&atilde;o <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">

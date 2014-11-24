@@ -1,4 +1,4 @@
-<?php include_once("includes/login/session_admin.php"); ?> 
+<?php include_once("includes/login/session.php"); ?>
 <?php include_once("includes/template/function.php"); ?>
 <!DOCTYPE html>
 <html lang="pt" ng-app="myDashboard">
