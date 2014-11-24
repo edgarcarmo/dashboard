@@ -36,7 +36,7 @@
       </div>
       <div class="row">
         <div class="col-md-6">
-          <a class="btn btn-success" href="includes/modal/comarcas_add.php" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus"></span> Cadastrar comarcas</a>
+          <a class="btn btn-success" href="includes/modal/comarcas_add.php" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#myModal"><span class="glyphicon glyphicon-plus"></span> Cadastrar comarcas</a>
           <button class="btn btn-danger" id="remove-data" data-method="remove"><span class="glyphicon glyphicon-trash"></span> Remover comarcas</button >
         </div>
       </div>
@@ -54,7 +54,7 @@
       function operateFormatter(value, row, index) {
         var url = encodeURI("includes/modal/comarcas_edit.php?id="+row.id+"&name="+row.name);
         return [
-            '<a class="edit ml10" title="Edit" href="'+url+'" data-toggle="modal" data-target="#myModal">',
+            '<a class="edit ml10" title="Edit" href="'+url+'" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#myModal">',
                 '<i class="glyphicon glyphicon-edit"></i>',
             '</a>',
             '<a class="remove ml10" href="javascript:void(0)" title="Remove">',

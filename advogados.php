@@ -49,7 +49,7 @@
       </div>
       <div class="row">
         <div class="col-md-6">
-          <a class="btn btn-success" href="includes/modal/advogados_add.php" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-plus"></span> Cadastrar advogados</a>
+          <a class="btn btn-success" href="includes/modal/advogados_add.php" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#myModal"><span class="glyphicon glyphicon-plus"></span> Cadastrar advogados</a>
           <button class="btn btn-danger" id="remove-data" data-method="remove"><span class="glyphicon glyphicon-trash"></span> Remover advogados</button >
         </div>
       </div>
@@ -69,7 +69,7 @@
         teste = row;
         var url = encodeURI("includes/modal/advogados_edit.php?id="+row.id+"&oab="+row.oab+"&oabuf="+row.oabuf+"&name="+row.name+"&cpf="+row.cpf+"&phone="+row.phone+"&cellphone="+row.cellphone+"&email="+row.email+"&cep="+row.cep+"&address="+row.address+"&number="+row.number+"&complement="+row.complement+"&neighborhood="+row.neighborhood+"&city="+row.city+"&state="+row.state);
         return [
-            '<a class="edit ml10" title="Editar" href="'+url+'" data-toggle="modal" data-target="#myModal">',
+            '<a class="edit ml10" title="Editar" href="'+url+'" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#myModal">',
                 '<i class="glyphicon glyphicon-edit"></i>',
             '</a>',
             '<a class="remove ml10" href="javascript:void(0)" title="Excluir advogado">',

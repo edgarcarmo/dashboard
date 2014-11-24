@@ -78,7 +78,7 @@
 		    	$resultado = mysql_query($sql, $conexao) or die("Não foi possível consultar $type já cadastradas");
 		    }
 	  	}
-	    if(!mysql_num_rows($resultado) > 0) {
+	  	if(!mysql_num_rows($resultado) > 0) {
 			$resultadoInsert = mysql_query($sqlInsert, $conexao) or die ("Erro na seleção da tabela.");
 			if ($resultadoInsert === TRUE) {
 			    header('location:../../'.$type.'.php');

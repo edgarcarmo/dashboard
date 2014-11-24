@@ -73,10 +73,15 @@ function replaceAll(str, de, para){
 function consultarCEP(cep) {
   cep = replaceAll(cep, "-", "");
   if (cep != null || cep != "") {
-     $.ajax({
+      var $modal = $('.js-loading-bar'), $bar = $modal.find('.progress-bar');
+      $modal.modal('show');
+      $bar.addClass('animate');
+      $.ajax({
         dataType: 'json',
         url: 'http://cep.correiocontrol.com.br/'+cep+'.json',
         success: function(data){
+          $bar.removeClass('animate');
+          $modal.modal('hide');
           $('#address').val(data.logradouro);
           $('#neighborhood').val(data.bairro);
           $('#city').val(data.localidade);
@@ -84,6 +89,8 @@ function consultarCEP(cep) {
           $('#number').focus();
         },
         error: function(msg) {
+          $bar.removeClass('animate');
+          $modal.modal('hide');
           $('#address').val("");
           $('#neighborhood').val("");
           $('#city').val("");
