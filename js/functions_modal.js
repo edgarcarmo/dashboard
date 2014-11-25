@@ -18,5 +18,13 @@ $(document).ready(function(){
             element.mask("(99) 9999-9999?9");
         }
     });
+    $('#cpf').validacpf();
+    $("#cpf").popover({
+      placement : 'bottom',
+      animation : true,
+      content : 'Número de CPF inválido.',
+      trigger : 'manual',
+      template : '<div class="popover" role="tooltip" style="background-color:#F9F9F9;"><div class="arrow"></div><div class="popover-content"></div></div>'
+    });
+    $("#cpf").focus(function(){$(this).popover('hide');})
 });
-
