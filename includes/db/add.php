@@ -49,11 +49,9 @@
 	    include_once("conection.php");
      	switch ($type) {
 		    case 'advogados': {
-		    	$sqlOab = "SELECT `oab`FROM `advogados` WHERE `oab` = '$oab'";
-				$resultadoOab = mysql_query($sqlOab, $conexao) or die("Não foi possível consultar $type já cadastradas");
-				if(mysql_num_rows($resultadoOab) > 0){
+		    	$resultado = mysql_query($sqlOab, $conexao) or die("Não foi possível consultar $type já cadastradas");
+				if(mysql_num_rows($resultado) > 0){
 					$printError = "O registro da oab ".$oab;
-					$resultado = $resultadoOab;
 					break;
 				}
 
