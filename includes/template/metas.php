@@ -36,6 +36,12 @@
     	echo "<meta name='keyword' content=''>";
         break;
     }
+    case 'status': {
+        echo "<title>Dashboard Status</title>";
+        echo "<meta name='description' content=''>";
+        echo "<meta name='keyword' content=''>";
+        break;
+    }
     case 'error': {
         echo "<title>Dashboard Error</title>";
         echo "<meta name='description' content=''>";

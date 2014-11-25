@@ -1,4 +1,2 @@
 Lista Comarcas
 Mostar o campo isadmin como checkbox
-
-Criar cadastro de status

@@ -7,6 +7,7 @@
     case 'contas': {$nav3 = true; break;}
     case 'comarcas': {$nav9 = true; break;}
     case 'usuarios': {$nav9 = true; break;}
+    case 'status': {$nav9 = true; break;}
     default: {$nav1 = true; break;}
   }
 ?>
@@ -32,6 +33,8 @@
           <a href="#" data-toggle="dropdown" id="adminMenu">Administra&ccedil;&atilde;o <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="comarcas.php">Comarcas</a></li>
+            <li class="divider"></li>
+            <li><a href="status.php">Status</a></li>
             <li class="divider"></li>
             <li><a href="usuarios.php">Usuários</a></li>
           </ul>

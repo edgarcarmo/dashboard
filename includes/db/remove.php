@@ -8,6 +8,10 @@
 	    	$sql = "DELETE FROM `comarcas` WHERE `id` = $id";
 	    	break;
 	    }
+	    case 'status': {
+	    	$sql = "DELETE FROM `status` WHERE `id` = $id";
+	    	break;
+	    }
 	    case 'usuarios': {
 	    	$sql = "DELETE FROM `usuarios` WHERE `id` = $id";
 	    	break;

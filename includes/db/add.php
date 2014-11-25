@@ -10,6 +10,13 @@
 			    $printError = "A comcarca ".$name;
 			    break;
 		    }
+		    case 'status': {
+		    	$name = isset($_POST['name']) ? $_POST['name'] : "";
+			    $sql = "SELECT * FROM `status` WHERE `name` = '$name'";
+			    $sqlInsert = "INSERT INTO `status`(`name`) VALUES ('$name')";
+			    $printError = "O status ".$name;
+			    break;
+		    }
 		    case 'usuarios': {
 		    	$name = isset($_POST["name"]) ? $_POST["name"] : "";
 				$email = isset($_POST["email"]) ? $_POST["email"] : "";
