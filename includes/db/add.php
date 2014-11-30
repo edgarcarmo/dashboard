@@ -10,6 +10,13 @@
 			    $printError = "A comcarca ".$name;
 			    break;
 		    }
+		    case 'status': {
+		    	$name = isset($_POST['name']) ? $_POST['name'] : "";
+			    $sql = "SELECT * FROM `status` WHERE `name` = '$name'";
+			    $sqlInsert = "INSERT INTO `status`(`name`) VALUES ('$name')";
+			    $printError = "O status ".$name;
+			    break;
+		    }
 		    case 'usuarios': {
 		    	$name = isset($_POST["name"]) ? $_POST["name"] : "";
 				$email = isset($_POST["email"]) ? $_POST["email"] : "";
@@ -49,11 +56,9 @@
 	    include_once("conection.php");
      	switch ($type) {
 		    case 'advogados': {
-		    	$sqlOab = "SELECT `oab`FROM `advogados` WHERE `oab` = '$oab'";
-				$resultadoOab = mysql_query($sqlOab, $conexao) or die("Não foi possível consultar $type já cadastradas");
-				if(mysql_num_rows($resultadoOab) > 0){
+		    	$resultado = mysql_query($sqlOab, $conexao) or die("Não foi possível consultar $type já cadastradas");
+				if(mysql_num_rows($resultado) > 0){
 					$printError = "O registro da oab ".$oab;
-					$resultado = $resultadoOab;
 					break;
 				}
 
@@ -78,7 +83,7 @@
 		    	$resultado = mysql_query($sql, $conexao) or die("Não foi possível consultar $type já cadastradas");
 		    }
 	  	}
-	    if(!mysql_num_rows($resultado) > 0) {
+	  	if(!mysql_num_rows($resultado) > 0) {
 			$resultadoInsert = mysql_query($sqlInsert, $conexao) or die ("Erro na seleção da tabela.");
 			if ($resultadoInsert === TRUE) {
 			    header('location:../../'.$type.'.php');

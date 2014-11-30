@@ -1,5 +1,2 @@
 Lista Comarcas
 Mostar o campo isadmin como checkbox
-
-Modal Add Advogados
-Validar cpf valido

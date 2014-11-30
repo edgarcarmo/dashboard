@@ -31,13 +31,13 @@
                         <div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									<label for="oab">OAB</label>
+									<label for="oab">OAB *</label>
 									<input type="text" id="oab" name="oab" class="form-control" placeholder="OAB" required value="<?php echo $oab; ?>"/>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<label for="oabuf">Estado OAB</label>
+									<label for="oabuf">Estado OAB *</label>
 									<select name="oabuf" id="oabuf" name="oabuf" class="form-control" required>
 										<option value="" selected="selected">Selecione o Estado</option>
 										<option value="AC" <?php echo $oabuf=='AC'?'selected':'';?>>Acre</option>
@@ -74,7 +74,7 @@
 						<div class="row">
 							<div class="col-md-5">
 								<div class="form-group">
-									<label for="cpf">CPF</label>
+									<label for="cpf">CPF *</label>
 									<input type="text" id="cpf" name="cpf" pattern="[0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2}" class="form-control mask_cpf" placeholder="CPF" required value="<?php echo $cpf; ?>"/>
 								</div>
 							</div>
@@ -82,7 +82,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="form-group">
-									<label for="name">Nome</label>
+									<label for="name">Nome *</label>
 									<input type="text" id="name" name="name" class="form-control" placeholder="Nome completo" required value="<?php echo $name; ?>"/>
 								</div>
 							</div>
@@ -104,7 +104,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="form-group">
-									<label for="email">E-mail</label>
+									<label for="email">E-mail *</label>
 									<input type="email" id="email" name="email" class="form-control" placeholder="E-mail" required value="<?php echo $email; ?>"/>
 								</div>
 							</div>

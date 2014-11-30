@@ -18,6 +18,12 @@
     	echo "<meta name='keyword' content=''>";
         break;
     }
+    case 'contas': {
+        echo "<title>Dashboard Contas</title>";
+        echo "<meta name='description' content=''>";
+        echo "<meta name='keyword' content=''>";
+        break;
+    }
     case 'comarcas': {
     	echo "<title>Dashboard Comarcas</title>";
     	echo "<meta name='description' content=''>";
@@ -28,6 +34,12 @@
     	echo "<title>Dashboard Usu&#225;rios</title>";
     	echo "<meta name='description' content=''>";
     	echo "<meta name='keyword' content=''>";
+        break;
+    }
+    case 'status': {
+        echo "<title>Dashboard Status</title>";
+        echo "<meta name='description' content=''>";
+        echo "<meta name='keyword' content=''>";
         break;
     }
     case 'error': {
