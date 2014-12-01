@@ -55,7 +55,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-5">
+							<div class="col-md-6">
 								<div class="form-group">
 									<label for="cpf">CPF *</label>
 									<input type="text" id="cpf" name="cpf" pattern="[0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2}" class="form-control mask_cpf" placeholder="CPF" required/>
@@ -115,7 +115,7 @@
 	                                </div>
 								</div>
 							</div>
-							<div class="col-md-8">
+							<div class="col-md-6">
 								&nbsp;
 							</div>
 						</div>

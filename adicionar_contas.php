@@ -12,12 +12,12 @@
     ?>
     <div class="container">
       <div class="col-md-6">
-        <h1>Advogados</h1>
+        <h1>Contas > Nova Conta</h1>
       </div>
     </div>
     <br />
 
-    <?php include_once("includes/modal/contas_add.php"); ?>
+    <?php include_once("includes/modal/contas_add2.php"); ?>
 
     <?php include_once("includes/template/scripts.php"); ?>
     <?php include_once("includes/template/ga.php"); ?>
