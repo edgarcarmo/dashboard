@@ -1,2 +1,5 @@
 Lista Comarcas
 Mostar o campo isadmin como checkbox
+
+Add Contas
+Validar todos os campos obrigatorios

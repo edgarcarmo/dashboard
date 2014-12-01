@@ -64,7 +64,7 @@
                     <label for="servidor">Pasta no Servidor</label>
                     <div class="input-group">
                       <span class="input-group-addon glyphicon glyphicon-folder-open"></span>
-                      <input type="text" id="folderserver" name="folderserver" class="form-control">
+                      <input type="text" id="folderserver" name="folderserver" class="form-control"/>
                     </div>
                   </div>
                 </div>
@@ -126,29 +126,113 @@
                     </div>
                   </div>
                   <ul class="list-group" id="listAutor"></ul>
-              </div>
-              <div class="col-md-12">
-                <div class="form-group">
-                  <label for="autor">Réu</label>
-                  <div class="input-group">
-                    <input type="text" id="reuNew" name="reuNew" class="form-control" placeholder="Réu"/>
-                    <span class="input-group-btn">
-                      <a class="btn btn-default" ng-click="addReu();" title="Incluir réu">
-                          <span class="glyphicon glyphicon-plus-sign"></span>
-                      </a>
-                    </span>
-                  </div>
                 </div>
-                <ul class="list-group" id="listReu"></ul>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="autor">Réu</label>
+                    <div class="input-group">
+                      <input type="text" id="reuNew" name="reuNew" class="form-control" placeholder="Réu"/>
+                      <span class="input-group-btn">
+                        <a class="btn btn-default" ng-click="addReu();" title="Incluir réu">
+                            <span class="glyphicon glyphicon-plus-sign"></span>
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                  <ul class="list-group" id="listReu"></ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Advogados</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12 pull-right">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-import"></span> Associar advogados</button>
+                    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                      <span class="caret"></span>
+                      <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#"><span class="glyphicon glyphicon-export"></span> Retirar associação</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#"><span class="glyphicon glyphicon-plus"></span> Novo advogado</a></li>
+                      <li><a href="#"><span class="glyphicon glyphicon-edit"></span> Editar selecionado</a></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <table class="table table-striped table-bordered">
+              <tr>
+                <th><input type="checkbox"></th>
+                <th>OAB</th>
+                <th>UF</th>
+                <th>Nome</th>
+                <th>Celular</th>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td>123345</td>
+                <td>SP</td>
+                <td>Edgar de Oliveira Carmo</td>
+                <td>(11) 99338-9037</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td>123345</td>
+                <td>SP</td>
+                <td>Edgar de Oliveira Carmo</td>
+                <td>(11) 99338-9037</td>
+              </tr>
+            </table>
+          </div>  
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Arquivos</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-8">
+                  <div class="form-group">
+                    <input type="file" id="file[]" name="file[]" multiple>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="pull-right">
+                    <button class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-save"></span> Importar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <table class="table table-striped table-bordered">
+              <tr>
+                <th>#</th>
+                <th>Arquivo</th>
+                <th>Tamanho</th>
+              </tr> 
+              <tr>
+                <td>1</td>
+                <td>Imagem1.jpg</td>
+                <td>0.23 MB</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>arquivo_exemplo.doc</td>
+                <td>3.00 MB</td>
+              </tr>
+            </table>
+          </div>
           <div class="pull-right">
             <a href="contas.php" type="button" class="btn btn-default btn_cancel">Cancelar</a>
             <button type="submit" class="btn btn-success">Salvar</button>
-          </div>
+          </div>          
         </div>
       </div>
       <input type="hidden" name="type" value="contas"/>
