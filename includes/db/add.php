@@ -49,6 +49,21 @@
 			    $sqlInsert = "INSERT INTO `advogados` (`oab`, `oabuf`, `cpf`, `name`, `phone`, `cellphone`, `email` ,`cep` ,`address` ,`number` ,`complement` ,`neighborhood` ,`city` ,`state`) VALUES ('$oab','$oabuf', '$cpf', '$name', '$phone', '$cellphone', '$email','$cep' ,'$address' ,'$number' ,'$complement' ,'$neighborhood' ,'$city' ,'$state')";
 			    break;
 		    }
+		     case 'contas': {
+		    	$account = isset($_POST["account"]) ? $_POST["account"] : "";
+				$value = isset($_POST["value"]) ? moeda($_POST["value"]) : "";
+				$available = isset($_POST["available"]) ? moeda($_POST["available"]) : "";
+				$folderserver = isset($_POST["folderserver"]) ? $_POST["folderserver"] : "";
+				$process = isset($_POST["process"]) ? $_POST["process"] : "";
+				$stick = isset($_POST["stick"]) ? $_POST["stick"] : "";
+				$comarca = isset($_POST["comarca"]) ? $_POST["comarca"] : "";
+			    $sql = "SELECT `id`, `account` FROM `contas` WHERE `account` = '$account'";
+			    $sqlInsert = "INSERT INTO `contas` (`account`, `value`, `available`, `folderserver`, `process`, `stick`, `comarca`) VALUES ('$account', '$value', '$available', '$folderserver', '$process',$stick, $comarca)";
+			    $printError = "A conta ".$account;
+				$autores = isset($_POST["autor"]) ? $_POST["autor"] : "";
+				$reus = isset($_POST["reu"]) ? $_POST["reu"] : "";
+			    break;
+		    }
 		    default: {
 		    	echo null;
 		    }
@@ -70,7 +85,7 @@
 					break;
 				}
 
-				$sqlEmail = "SELECT `email`FROM `advogados` WHERE `email` = '$email'";
+				$sqlEmail = "SELECT `email` FROM `advogados` WHERE `email` = '$email'";
 				$resultadoEmail = mysql_query($sqlEmail, $conexao) or die("Não foi possível consultar $type já cadastradas");
 				if(mysql_num_rows($resultadoEmail) > 0){
 					$printError = "O email ".$email;
@@ -85,6 +100,22 @@
 	  	}
 	  	if(!mysql_num_rows($resultado) > 0) {
 			$resultadoInsert = mysql_query($sqlInsert, $conexao) or die ("Erro na seleção da tabela.");
+			switch ($type) {
+			    case 'contas': {
+			    	$resultado = mysql_query($sql, $conexao);
+					while($row = mysql_fetch_array($resultado)) {
+						foreach($autores as $value) {
+							$sqlInsertAutor = "INSERT INTO `autor` (`conta`, `name`) VALUES (".$row['id'].", '$value')";
+							$resultadoInsertAutor = mysql_query($sqlInsertAutor, $conexao) or die ("Erro na seleção da tabela.");
+						}
+						foreach($reus as $value) {
+							$sqlInsertReu = "INSERT INTO `reu` (`conta`, `name`) VALUES (".$row['id'].", '$value')";
+							$resultadoInsertReu = mysql_query($sqlInsertReu, $conexao) or die ("Erro na seleção da tabela.");
+						}
+					}
+					break;
+			    }
+		  	}
 			if ($resultadoInsert === TRUE) {
 			    header('location:../../'.$type.'.php');
 			} else {

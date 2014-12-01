@@ -20,6 +20,10 @@
 	    	$sql = "DELETE FROM `advogados` WHERE `id` = $id";
 	    	break;
 	    }
+	    case 'contas': {
+	    	$sql = "DELETE FROM `contas` WHERE `id` = $id";
+	    	break;
+	    }
 	    default: {
 	    	echo null;
 	    	break;

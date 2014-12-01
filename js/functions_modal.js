@@ -27,4 +27,5 @@ $(document).ready(function(){
       template : '<div class="popover" role="tooltip" style="background-color:#F9F9F9;"><div class="arrow"></div><div class="popover-content"></div></div>'
     });
     $("#cpf").focus(function(){$(this).popover('hide');})
+    $(".moneyReal").maskMoney({decimal:",",thousands:"."});
 });

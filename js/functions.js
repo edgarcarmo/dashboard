@@ -28,11 +28,61 @@ function dashboard($scope, $http, $filter){
   $scope.refresh = function(){
     $("button[name=refresh]").click();
   }
+
+  $scope.autores= [];
+
+  $scope.addAutor = function(){
+    $scope.name = $('#autorNew').val();
+    if($scope.name != null && $scope.name != '' ){
+      $scope.valid = true;
+      for(var i=0; i < $scope.autores.length; i++){
+        if($scope.autores[i].name == $scope.name){
+          $scope.valid = false;
+          break;
+        }
+      }
+      if($scope.valid){
+        $scope.autores.push({
+            id: $scope.autores.length,
+            name: $scope.name
+        });
+        $("#listAutor").append('<li class="list-group-item" id="li_autor'+$scope.autores.length+'"><div class="input-group"><span class="input-group-btn"><a class="btn btn-default" onclick="removeAutor('+$scope.autores.length+')" title="Remover autor"><span class="glyphicon glyphicon-minus-sign"></span></a></span><input type="text" id="autor'+$scope.autores.length+'" name="autor[]" class="form-control" value="'+$scope.name+'" readonly="readonly"></div></li>');
+      } else {
+        alert("Autor já cadastrado!");
+      }
+      $('#autorNew').val("");
+    }
+  }
+
+  $scope.reus= [];
+
+  $scope.addReu = function(){
+    $scope.name = $('#reuNew').val();
+    if($scope.name != null && $scope.name != '' ){
+      $scope.valid = true;
+      for(var i=0; i < $scope.reus.length; i++){
+        if($scope.reus[i].name == $scope.name){
+          $scope.valid = false;
+          break;
+        }
+      }
+      if($scope.valid){
+        $scope.reus.push({
+            id: $scope.reus.length,
+            name: $scope.name
+        });
+        $("#listReu").append('<li class="list-group-item" id="li_reu'+$scope.reus.length+'"><div class="input-group"><span class="input-group-btn"><a class="btn btn-default" onclick="removeReu('+$scope.reus.length+')" title="Remover réu"><span class="glyphicon glyphicon-minus-sign"></span></a></span><input type="text" id="reu'+$scope.reus.length+'" name="reu[]" class="form-control" value="'+$scope.name+'" readonly="readonly"></div></li>');
+      } else {
+        alert("Réu já cadastrado!");
+      }
+      $('#reuNew').val("");
+    }
+  }
 }
 
 $('#remove-data').click(function () {
     var id = 0;
-    var getRows = function () {
+    var getRows = function ()   {
         var rows = [];
         for (var i = 0; i < 10; i++) {
             rows.push({
@@ -48,6 +98,24 @@ $('#remove-data').click(function () {
     $("#dashboard").scope().excluir(null, ids, $("#typeRemove").val());
     $table.bootstrapTable('remove', {field: 'id', values: ids});
 });
+
+function removeAutor(id){
+  var resp = confirm("Confirma a exclusão?");
+    if(resp){
+        $("#li_autor"+id).remove();
+        var index =  $("#dashboard").scope().autores.indexOf(id)
+        $("#dashboard").scope().autores.splice(index, 1);
+    }
+}
+
+function removeReu(id){
+  var resp = confirm("Confirma a exclusão?");
+    if(resp){
+        $("#li_reu"+id).remove();
+        var index =  $("#dashboard").scope().reus.indexOf(id)
+        $("#dashboard").scope().reus.splice(index, 1);
+    }
+}
 
 function rowStyle(row, index) {
     var classes = ['active'];
