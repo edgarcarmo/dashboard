@@ -170,25 +170,25 @@
                   					   data-show-columns="false" data-search="false" data-select-item-name="toolbar1"
                   					   data-show-toggle="false" data-pagination="true">
 									<thead>
-									<tr>
-										<th data-field="state" data-checkbox="true" data-halign="center" data-align="center"></th>
-										<th data-field="id" data-visible="false" data-halign="center" data-align="center">Item ID</th>
-										<th data-field="name" data-halign="center" data-align="center" data-sortable="true">Nome</th>
-										<th data-field="oab" data-halign="center" data-align="center" data-sortable="true">OAB</th>
-										<th data-field="oabuf" data-halign="center" data-align="center" data-sortable="true">OAB UF</th>
-										<th class="mask_cpf" data-field="cpf" data-field="cpf" data-halign="center" data-align="center" data-sortable="true">CPF</th>
-										<th class="mask_phone" data-field="phone" data-halign="center" data-align="center" data-sortable="true">Telefone</th>
-										<th class="mask_phone" data-field="cellphone" data-halign="center" data-align="center" data-sortable="true">Celular</th>
-										<th data-field="email" data-halign="center" data-align="center" data-sortable="true">E-mail</th>
-										<th class="mask_cep" data-field="cep" data-visible="false" data-halign="center" data-align="center" data-sortable="true">CEP</th>
-										<th data-field="address" data-visible="false" data-halign="center" data-align="center" data-sortable="true">Endere&#231;o</th>
-										<th data-field="number" data-visible="false" data-halign="center" data-align="center" data-sortable="true">N&#250;mero</th>
-										<th data-field="complement" data-visible="false" data-halign="center" data-align="center" data-sortable="true">Complemento</th>
-										<th data-field="neighborhood" data-visible="false" data-halign="center" data-align="center" data-sortable="true">Bairro</th>
-										<th data-field="city" data-visible="false"  data-halign="center" data-align="center" data-sortable="true">Cidade</th>
-										<th data-field="state" data-halign="center" data-align="center" data-sortable="true">Estado</th>
-										<!--<th data-field="operate" data-formatter="operateFormatter" data-events="operateEvents" data-halign="center" data-align="center">A&ccedil;&otilde;es</th>-->
-									</tr>
+										<tr>
+											<th data-field="state" data-checkbox="true" data-halign="center" data-align="center"></th>
+											<th data-field="id" data-visible="false" data-halign="center" data-align="center">Item ID</th>
+											<th data-field="name" data-halign="center" data-align="center" data-sortable="true">Nome</th>
+											<th data-field="oab" data-halign="center" data-align="center" data-sortable="true">OAB</th>
+											<th data-field="oabuf" data-halign="center" data-align="center" data-sortable="true">OAB UF</th>
+											<th class="mask_cpf" data-field="cpf" data-field="cpf" data-halign="center" data-align="center" data-sortable="true">CPF</th>
+											<th class="mask_phone" data-field="phone" data-halign="center" data-align="center" data-sortable="true">Telefone</th>
+											<th class="mask_phone" data-field="cellphone" data-halign="center" data-align="center" data-sortable="true">Celular</th>
+											<th data-field="email" data-halign="center" data-align="center" data-sortable="true">E-mail</th>
+											<th class="mask_cep" data-field="cep" data-visible="false" data-halign="center" data-align="center" data-sortable="true">CEP</th>
+											<th data-field="address" data-visible="false" data-halign="center" data-align="center" data-sortable="true">Endere&#231;o</th>
+											<th data-field="number" data-visible="false" data-halign="center" data-align="center" data-sortable="true">N&#250;mero</th>
+											<th data-field="complement" data-visible="false" data-halign="center" data-align="center" data-sortable="true">Complemento</th>
+											<th data-field="neighborhood" data-visible="false" data-halign="center" data-align="center" data-sortable="true">Bairro</th>
+											<th data-field="city" data-visible="false"  data-halign="center" data-align="center" data-sortable="true">Cidade</th>
+											<th data-field="state" data-halign="center" data-align="center" data-sortable="true">Estado</th>
+											<!--<th data-field="operate" data-formatter="operateFormatter" data-events="operateEvents" data-halign="center" data-align="center">A&ccedil;&otilde;es</th>-->
+										</tr>
 									</thead>
 								</table>
 							</div>
