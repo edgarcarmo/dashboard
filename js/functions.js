@@ -117,6 +117,13 @@ function removeReu(id){
     }
 }
 
+ function removeAdv(id){
+  var resp = confirm("Confirma a exclusão?");
+    if(resp){
+        $("#adv"+id).remove();
+    }
+}
+
 function rowStyle(row, index) {
     var classes = ['active'];
 

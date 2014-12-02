@@ -62,6 +62,7 @@
 			    $printError = "A conta ".$account;
 				$autores = isset($_POST["autor"]) ? $_POST["autor"] : "";
 				$reus = isset($_POST["reu"]) ? $_POST["reu"] : "";
+				$adv = isset($_POST["advId"]) ? $_POST["advId"] : "";
 			    break;
 		    }
 		    default: {
@@ -112,6 +113,11 @@
 							$sqlInsertReu = "INSERT INTO `reu` (`conta`, `name`) VALUES (".$row['id'].", '$value')";
 							$resultadoInsertReu = mysql_query($sqlInsertReu, $conexao) or die ("Erro na seleção da tabela.");
 						}
+						foreach($adv as $value) {
+							$sqlInsertReu = "INSERT INTO `advogados_contas` (`conta`, `advogado`) VALUES (".$row['id'].", ".$value.")";
+							$resultadoInsertReu = mysql_query($sqlInsertReu, $conexao) or die ("Erro na seleção da tabela.");
+						}
+						include_once("upload.php");
 					}
 					break;
 			    }

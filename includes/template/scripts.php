@@ -2,6 +2,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap-table.min.js"></script>
 <script src="js/bootstrap-table-pt-BR.min.js"></script>
+<script src="js/fileinput.min.js"></script>
 <script src="js/angular.min.js"></script>
 <script src="js/underscore-min.js"></script>
 <script src="js/jquery.maskedinput.min.js"></script>

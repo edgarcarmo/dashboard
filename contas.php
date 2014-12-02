@@ -40,14 +40,14 @@
       </div>
       <div class="row">
         <div class="col-md-6">
-          <a class="btn btn-success" href="contas_add.php" data-backdrop="static" data-keyboard="false" data-target="#myModal"><span class="glyphicon glyphicon-plus"></span> Cadastrar contas</a>
+          <a class="btn btn-success" href="contas_add.php" data-backdrop="static" data-keyboard="false"><span class="glyphicon glyphicon-plus"></span> Cadastrar contas</a>
           <button class="btn btn-danger" id="remove-data" data-method="remove"><span class="glyphicon glyphicon-trash"></span> Remover contas</button >
         </div>
       </div>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
             </div> <!-- /.modal-content -->
         </div> <!-- /.modal-dialog -->
