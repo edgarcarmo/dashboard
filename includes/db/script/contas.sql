@@ -1,0 +1,10 @@
+CREATE TABLE contas (
+	id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
+	account VARCHAR(200) NULL,
+	value DECIMAL(15,2) NULL,
+	available DECIMAL(15,2) NULL,
+	folderserver VARCHAR(300) NULL,
+	process VARCHAR(200) NULL,
+	stick INT NULL,
+	comarca INT NULL
+) ENGINE = innodb

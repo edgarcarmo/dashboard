@@ -64,9 +64,7 @@
     <input type="hidden" name="type" id="typeRemove" value="advogados"/>
     <?php include_once("includes/template/scripts.php"); ?>
     <script type="text/javascript">
-      var teste;
       function operateFormatter(value, row, index) {
-        teste = row;
         var url = encodeURI("includes/modal/advogados_edit.php?id="+row.id+"&oab="+row.oab+"&oabuf="+row.oabuf+"&name="+row.name+"&cpf="+row.cpf+"&phone="+row.phone+"&cellphone="+row.cellphone+"&email="+row.email+"&cep="+row.cep+"&address="+row.address+"&number="+row.number+"&complement="+row.complement+"&neighborhood="+row.neighborhood+"&city="+row.city+"&state="+row.state);
         return [
             '<a class="edit ml10" title="Editar" href="'+url+'" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#myModal">',
