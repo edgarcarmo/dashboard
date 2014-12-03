@@ -1,0 +1,20 @@
+Select s.name as Campanha, CONVERT(varchar, le.datecad, 103) as 'Data de Cadastro',
+le.name as Nome, le.email as Email, le.cpf as Cpf, le.zipCode as Cep,
+le.address as 'Endereço', le.number as Numero, le.complement as Complemento,
+le.neighborhood as Bairro, le.city as Cidade, le.state as Estado, 
+le.business as Empresa, le.telcommercial as 'Tel Comercial', le.telcel as 'Tel Celular', 
+le.qtdemployees as 'Qtd Funcionarios', le.cnpj as Cnpj, le.customers as 'É cliente', 
+le.howdidyouhear as 'Como ficou sabendo', le.dateofBirth as Aniversario, le.message as Messagem
+From portal_leads as le, lum_contentversion as cv, lum_contentLocale as cl, lum_content as c, lum_ServiceInstance as s
+Where le.id = cv.itemId 
+and cv.contentLocaleId = cl.id 
+and cl.contentId = c.id
+and c.serviceInstanceId = s.serviceInstanceId
+
+
+and c.serviceInstanceId = '2C9EE250383A0C3301384E7C406D02F5'
+
+
+
+	  
+      

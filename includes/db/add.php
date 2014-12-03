@@ -114,8 +114,8 @@
 							$resultadoInsertReu = mysql_query($sqlInsertReu, $conexao) or die ("Erro na seleção da tabela.");
 						}
 						foreach($adv as $value) {
-							$sqlInsertReu = "INSERT INTO `advogados_contas` (`conta`, `advogado`) VALUES (".$row['id'].", ".$value.")";
-							$resultadoInsertReu = mysql_query($sqlInsertReu, $conexao) or die ("Erro na seleção da tabela.");
+							$sqlInsertAdv = "INSERT INTO `advogados_contas` (`conta`, `advogado`) VALUES (".$row['id'].", ".$value.")";
+							$resultadoInsertAdv = mysql_query($sqlInsertAdv, $conexao) or die ("Erro na seleção da tabela.");
 						}
 						include_once("upload.php");
 					}

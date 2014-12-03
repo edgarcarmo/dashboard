@@ -3,3 +3,8 @@ Mostar o campo isadmin como checkbox
 
 Add Contas
 Validar todos os campos obrigatorios
+Validar associação de advogados, não permitir adiconar advogado que ´já existe
+
+Upload
+Verificar se vou limitar tamanho e extensão
+

@@ -1,0 +1,370 @@
+﻿<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:int="http://Ticket/Watts/Authorization/Core/Interfaces/" xmlns:tic="http://schemas.datacontract.org/2004/07/Ticket.Watts.Framework.Core.Communications.Request" xmlns:tic1="http://schemas.datacontract.org/2004/07/Ticket.Watts.Authorization.Core.DTO" xmlns:tic2="http://schemas.datacontract.org/2004/07/Ticket.Watts.Framework.Core.Communications" xmlns:req="http://Ticket/Watts/Authorization/Core/Communications/Request/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <int:ISO8583Execute>
+         <int:request>
+            <tic:List>
+               <tic1:AuthorizationDTO>
+                  <tic1:AcquirerInstitutionCountryIdentification>76</tic1:AcquirerInstitutionCountryIdentification>
+                  <tic1:AcquirerInstitutionIdentification>2633</tic1:AcquirerInstitutionIdentification>
+                  <tic1:CardAcceptorTerminalIdentification>URAISO01</tic1:CardAcceptorTerminalIdentification>
+                  <tic1:CardNumber>6033424863699005</tic1:CardNumber>
+                  <tic1:ISODataElement48List>
+                    <tic1:ISODataElemento48DTO>
+                        <tic1:Identification>99</tic1:Identification>
+                        <tic1:Size>2</tic1:Size>
+                        <tic1:Value>44</tic1:Value>
+                    </tic1:ISODataElemento48DTO>
+					<tic1:ISODataElemento48DTO>
+                        <tic1:Identification>44</tic1:Identification>
+                        <tic1:Size>2</tic1:Size>
+                        <tic1:Value>30</tic1:Value>
+                    </tic1:ISODataElemento48DTO>
+					<tic1:ISODataElemento48DTO>
+                        <tic1:Identification>77</tic1:Identification>
+                        <tic1:Size>1</tic1:Size>
+                        <tic1:Value>1</tic1:Value>
+                    </tic1:ISODataElemento48DTO>
+					<tic1:ISODataElemento48DTO>
+                        <tic1:Identification>78</tic1:Identification>
+                        <tic1:Size>1</tic1:Size>
+                        <tic1:Value>2</tic1:Value>
+                    </tic1:ISODataElemento48DTO>
+                  </tic1:ISODataElement48List>
+                  <tic1:MessageTypeIdentification>0600</tic1:MessageTypeIdentification>
+                  <tic1:PointOfServiceEntryMode>12</tic1:PointOfServiceEntryMode>
+                  <tic1:ProcessingIdentification>300000</tic1:ProcessingIdentification>
+                  <tic1:RetrievalReferenceNumber>154651338</tic1:RetrievalReferenceNumber>
+                  <tic1:SystemTrace>154651338</tic1:SystemTrace>
+                  <tic1:TransactionCurrencyCode>76</tic1:TransactionCurrencyCode>
+                  <tic1:TransactionDate>2014-08-28T15:46:51</tic1:TransactionDate>
+                  <tic1:TransactionTime>2014-08-28T15:46:51</tic1:TransactionTime>
+                  <tic1:TransmissionTime>2014-08-28T15:46:51</tic1:TransmissionTime>
+               </tic1:AuthorizationDTO>
+            </tic:List>
+            <tic:Paging>
+               <tic2:All>true</tic2:All>
+               <tic2:BindingType>WsHttpBinding</tic2:BindingType>
+               <tic2:PageNumber>0</tic2:PageNumber>
+               <tic2:PageRecords>0</tic2:PageRecords>
+               <tic2:TotalRecords>0</tic2:TotalRecords>
+            </tic:Paging>
+            <req:Operation>Create</req:Operation>
+         </int:request>
+      </int:ISO8583Execute>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+   <s:Body>
+      <ISO8583ExecuteResponse xmlns="http://Ticket/Watts/Authorization/Core/Interfaces/">
+         <ISO8583ExecuteResult xmlns:a="http://Ticket/Watts/Authorization/Core/Communications/Response/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+            <ErrorList xmlns="http://schemas.datacontract.org/2004/07/Ticket.Watts.Framework.Core.Communications.Response" xmlns:b="http://schemas.datacontract.org/2004/07/Ticket.Watts.Framework.Core.Communications"/>
+            <Success xmlns="http://schemas.datacontract.org/2004/07/Ticket.Watts.Framework.Core.Communications.Response">true</Success>
+            <User i:nil="true" xmlns="http://schemas.datacontract.org/2004/07/Ticket.Watts.Framework.Core.Communications.Response" xmlns:b="http://schemas.datacontract.org/2004/07/Ticket.Watts.Framework.Core.Communications"/>
+            <Item xmlns="http://schemas.datacontract.org/2004/07/Ticket.Watts.Framework.Core.Communications.Response" xmlns:b="http://schemas.datacontract.org/2004/07/Ticket.Watts.Authorization.Core.DTO">
+               <b:AcquirerInstitutionCountryIdentification>0</b:AcquirerInstitutionCountryIdentification>
+               <b:AcquirerInstitutionIdentification>2633</b:AcquirerInstitutionIdentification>
+               <b:AcquirerResponseCodeDescript/>
+               <b:AdditionalDataISO/>
+               <b:AdditionalDataNational/>
+               <b:AdditionalResponseData/>
+               <b:AuthorizationAmount>0</b:AuthorizationAmount>
+               <b:AuthorizationIdentificationResponse/>
+               <b:AuthorizationIdentificationResponseLength>0</b:AuthorizationIdentificationResponseLength>
+               <b:AuthorizationNumber/>
+               <b:AuthorizationRejectionReasonIdentification>0</b:AuthorizationRejectionReasonIdentification>
+               <b:AuthorizationRequestIdentification>0</b:AuthorizationRequestIdentification>
+               <b:AvaliableBalance>0</b:AvaliableBalance>
+               <b:ByPhoneAuthenticationReasonIdentification/>
+               <b:CIUCardNumber/>
+               <b:CVT2Flag/>
+               <b:CVV2/>
+               <b:CaptureDate>0001-01-01T00:00:00</b:CaptureDate>
+               <b:CardAcceptorIdentification/>
+               <b:CardAcceptorName/>
+               <b:CardAcceptorTerminalIdentification>URAISO01</b:CardAcceptorTerminalIdentification>
+               <b:CardHolderBillingAmount>0</b:CardHolderBillingAmount>
+               <b:CardHolderBillingFeeAmount>0</b:CardHolderBillingFeeAmount>
+               <b:CardNumber>6033424863699005000</b:CardNumber>
+               <b:CardSequenceNumber>0</b:CardSequenceNumber>
+               <b:CardholderBillingConversionRate>0</b:CardholderBillingConversionRate>
+               <b:CardholderBillingCurrencyCode>0</b:CardholderBillingCurrencyCode>
+               <b:ConsumerSlipMessage/>
+               <b:ConversionDate>0001-01-01T00:00:00</b:ConversionDate>
+               <b:CorporateLevelIdentfication>0</b:CorporateLevelIdentfication>
+               <b:CountryIdentification>0</b:CountryIdentification>
+               <b:CreditLineTypeIdentification>0</b:CreditLineTypeIdentification>
+               <b:CurrencyExponent>0</b:CurrencyExponent>
+               <b:CurrencyIdentification>0</b:CurrencyIdentification>
+               <b:DriverCodeList/>
+               <b:ExpirationDate>0001-01-01T00:00:00</b:ExpirationDate>
+               <b:ForwardingInstitutionCountryCode>0</b:ForwardingInstitutionCountryCode>
+               <b:ForwardingInstitutionIdentificationCode>0</b:ForwardingInstitutionIdentificationCode>
+               <b:FreeData/>
+               <b:HostIdentification/>
+               <b:HourmeterValue>0</b:HourmeterValue>
+               <b:ISODataElement48List>
+                  <b:ISODataElemento48DTO>
+                     <b:Identification>99</b:Identification>
+                     <b:Size>2</b:Size>
+                     <b:Value>44</b:Value>
+                  </b:ISODataElemento48DTO>
+                  <b:ISODataElemento48DTO>
+                     <b:Identification>71</b:Identification>
+                     <b:Size>78</b:Size>
+                     <b:Value>9507080032                    ADAUTO C FERNANDES      BRQ SOLUCOES INFORMATICA</b:Value>
+                  </b:ISODataElemento48DTO>
+               </b:ISODataElement48List>
+               <b:ISODataElement62List>
+                  <b:ISODataElemento62DTO>
+                     <b:Identification>99</b:Identification>
+                     <b:Size>2</b:Size>
+                     <b:Value>44</b:Value>
+                  </b:ISODataElemento62DTO>
+                  <b:ISODataElemento62DTO>
+                     <b:Identification>15</b:Identification>
+                     <b:Size>12</b:Size>
+                     <b:Value>000000000875</b:Value>
+                  </b:ISODataElemento62DTO>
+                  <b:ISODataElemento62DTO>
+                     <b:Identification>78</b:Identification>
+                     <b:Size>1</b:Size>
+                     <b:Value>2</b:Value>
+                  </b:ISODataElemento62DTO>
+               </b:ISODataElement62List>
+               <b:KeyAuthorization>-755177571</b:KeyAuthorization>
+               <b:MaskedCardNumber/>
+               <b:MerchandiseList/>
+               <b:MerchantCategoryCodeIdentification>0</b:MerchantCategoryCodeIdentification>
+               <b:MerchantContractIdentification>0</b:MerchantContractIdentification>
+               <b:MerchantSlipMessage/>
+               <b:MerchantType/>
+               <b:MessageTypeIdentification>0610</b:MessageTypeIdentification>
+               <b:NaturalPersonIdentification>0</b:NaturalPersonIdentification>
+               <b:NaturalPersonName/>
+               <b:NetworkInternationalIdentifier>0</b:NetworkInternationalIdentifier>
+               <b:NetworkManagementInformationCode>0</b:NetworkManagementInformationCode>
+               <b:NumberOfOrderGuide/>
+               <b:OdometerValue>0</b:OdometerValue>
+               <b:OriginalDataElements/>
+               <b:PIN/>
+               <b:POSEntryMode/>
+               <b:PersonalIdentificationNumber/>
+               <b:PointOfServiceConditionCode>0</b:PointOfServiceConditionCode>
+               <b:PointOfServiceEntryMode>0</b:PointOfServiceEntryMode>
+               <b:PointOfServicePINConditionCode>0</b:PointOfServicePINConditionCode>
+               <b:PrimaryAccountNumberExtended/>
+               <b:PrimaryAccountNumberExtendedCountryCode>0</b:PrimaryAccountNumberExtendedCountryCode>
+               <b:PrimaryBitmap>0</b:PrimaryBitmap>
+               <b:ProcessingIdentification>300000</b:ProcessingIdentification>
+               <b:ResponseCode>00</b:ResponseCode>
+               <b:ResponseIdentification>0</b:ResponseIdentification>
+               <b:ResponseMessageTypeIdentification/>
+               <b:RetrievalReferenceNumber>154651338</b:RetrievalReferenceNumber>
+               <b:ReturnMessage i:nil="true"/>
+               <b:ReversalReasonDescription/>
+               <b:ReversalReasonIdentification>0</b:ReversalReasonIdentification>
+               <b:SecondaryBitmap>0</b:SecondaryBitmap>
+               <b:SecurityRelatedControlInformation>0</b:SecurityRelatedControlInformation>
+               <b:ServiceRestrictionCode/>
+               <b:SettlementAmount>0</b:SettlementAmount>
+               <b:SettlementCode>0</b:SettlementCode>
+               <b:SettlementConversionRate>0</b:SettlementConversionRate>
+               <b:SettlementCurrencyCode>0</b:SettlementCurrencyCode>
+               <b:SettlementDate>0001-01-01T00:00:00</b:SettlementDate>
+               <b:SettlementFeeAmount>0</b:SettlementFeeAmount>
+               <b:SettlementProcessingFeeAmount>0</b:SettlementProcessingFeeAmount>
+               <b:Solution/>
+               <b:StockcardNumber/>
+               <b:SunnelAuthorizationRequestIdentification>0</b:SunnelAuthorizationRequestIdentification>
+               <b:SystemTrace>154651</b:SystemTrace>
+               <b:SystemsTraceAuditNumber i:nil="true"/>
+               <b:TagNumber/>
+               <b:Track1/>
+               <b:Track2/>
+               <b:Track3/>
+               <b:TransactionAmount>0</b:TransactionAmount>
+               <b:TransactionCurrencyCode>76</b:TransactionCurrencyCode>
+               <b:TransactionDate>2014-08-28T00:00:00</b:TransactionDate>
+               <b:TransactionFeeAmount>0</b:TransactionFeeAmount>
+               <b:TransactionProcessingFeeAmount>0</b:TransactionProcessingFeeAmount>
+               <b:TransactionTime>2014-08-29T12:46:51</b:TransactionTime>
+               <b:TransmissionDate>0001-01-01T00:00:00</b:TransmissionDate>
+               <b:TransmissionDateTime>0001-01-01T00:00:00</b:TransmissionDateTime>
+               <b:TransmissionTime>2014-08-28T12:46:51</b:TransmissionTime>
+               <b:UserIdentification/>
+               <b:VehicleEquipmentIdentification>0</b:VehicleEquipmentIdentification>
+            </Item>
+         </ISO8583ExecuteResult>
+      </ISO8583ExecuteResponse>
+   </s:Body>
+</s:Envelope>
+
+
+
+
+
+
+
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+   <s:Body>
+      <ISO8583ExecuteResponse xmlns="http://Ticket/Watts/Authorization/Core/Interfaces/">
+         <ISO8583ExecuteResult xmlns:a="http://Ticket/Watts/Authorization/Core/Communications/Response/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
+            <ErrorList xmlns="http://schemas.datacontract.org/2004/07/Ticket.Watts.Framework.Core.Communications.Response" xmlns:b="http://schemas.datacontract.org/2004/07/Ticket.Watts.Framework.Core.Communications"/>
+            <Success xmlns="http://schemas.datacontract.org/2004/07/Ticket.Watts.Framework.Core.Communications.Response">true</Success>
+            <User i:nil="true" xmlns="http://schemas.datacontract.org/2004/07/Ticket.Watts.Framework.Core.Communications.Response" xmlns:b="http://schemas.datacontract.org/2004/07/Ticket.Watts.Framework.Core.Communications"/>
+            <Item xmlns="http://schemas.datacontract.org/2004/07/Ticket.Watts.Framework.Core.Communications.Response" xmlns:b="http://schemas.datacontract.org/2004/07/Ticket.Watts.Authorization.Core.DTO">
+               <b:AcquirerInstitutionCountryIdentification>0</b:AcquirerInstitutionCountryIdentification>
+               <b:AcquirerInstitutionIdentification>2633</b:AcquirerInstitutionIdentification>
+               <b:AcquirerResponseCodeDescript/>
+               <b:AdditionalDataISO/>
+               <b:AdditionalDataNational/>
+               <b:AdditionalResponseData/>
+               <b:AuthorizationAmount>0</b:AuthorizationAmount>
+               <b:AuthorizationIdentificationResponse/>
+               <b:AuthorizationIdentificationResponseLength>0</b:AuthorizationIdentificationResponseLength>
+               <b:AuthorizationNumber/>
+               <b:AuthorizationRejectionReasonIdentification>0</b:AuthorizationRejectionReasonIdentification>
+               <b:AuthorizationRequestIdentification>0</b:AuthorizationRequestIdentification>
+               <b:AvaliableBalance>0</b:AvaliableBalance>
+               <b:ByPhoneAuthenticationReasonIdentification/>
+               <b:CIUCardNumber/>
+               <b:CVT2Flag/>
+               <b:CVV2/>
+               <b:CaptureDate>0001-01-01T00:00:00</b:CaptureDate>
+               <b:CardAcceptorIdentification/>
+               <b:CardAcceptorName/>
+               <b:CardAcceptorTerminalIdentification>URAISO01</b:CardAcceptorTerminalIdentification>
+               <b:CardHolderBillingAmount>0</b:CardHolderBillingAmount>
+               <b:CardHolderBillingFeeAmount>0</b:CardHolderBillingFeeAmount>
+               <b:CardNumber>6033422133147553000</b:CardNumber>
+               <b:CardSequenceNumber>0</b:CardSequenceNumber>
+               <b:CardholderBillingConversionRate>0</b:CardholderBillingConversionRate>
+               <b:CardholderBillingCurrencyCode>0</b:CardholderBillingCurrencyCode>
+               <b:ConsumerSlipMessage/>
+               <b:ConversionDate>0001-01-01T00:00:00</b:ConversionDate>
+               <b:CorporateLevelIdentfication>0</b:CorporateLevelIdentfication>
+               <b:CountryIdentification>0</b:CountryIdentification>
+               <b:CreditLineTypeIdentification>0</b:CreditLineTypeIdentification>
+               <b:CurrencyExponent>0</b:CurrencyExponent>
+               <b:CurrencyIdentification>0</b:CurrencyIdentification>
+               <b:DriverCodeList/>
+               <b:ExpirationDate>0001-01-01T00:00:00</b:ExpirationDate>
+               <b:ForwardingInstitutionCountryCode>0</b:ForwardingInstitutionCountryCode>
+               <b:ForwardingInstitutionIdentificationCode>0</b:ForwardingInstitutionIdentificationCode>
+               <b:FreeData/>
+               <b:HostIdentification/>
+               <b:HourmeterValue>0</b:HourmeterValue>
+               <b:ISODataElement48List>
+                  <b:ISODataElemento48DTO>
+                     <b:Identification>99</b:Identification>
+                     <b:Size>2</b:Size>
+                     <b:Value>44</b:Value>
+                  </b:ISODataElemento48DTO>
+                  <b:ISODataElemento48DTO>
+                     <b:Identification>17</b:Identification>
+                     <b:Size>68</b:Size>
+                     <b:Value>300100-CARTAO INEXISTENTE</b:Value>
+                  </b:ISODataElemento48DTO>
+               </b:ISODataElement48List>
+               <b:ISODataElement62List>
+                  <b:ISODataElemento62DTO>
+                     <b:Identification>99</b:Identification>
+                     <b:Size>2</b:Size>
+                     <b:Value>44</b:Value>
+                  </b:ISODataElemento62DTO>
+                  <b:ISODataElemento62DTO>
+                     <b:Identification>78</b:Identification>
+                     <b:Size>1</b:Size>
+                     <b:Value>2</b:Value>
+                  </b:ISODataElemento62DTO>
+               </b:ISODataElement62List>
+               <b:KeyAuthorization>-755177571</b:KeyAuthorization>
+               <b:MaskedCardNumber/>
+               <b:MerchandiseList/>
+               <b:MerchantCategoryCodeIdentification>0</b:MerchantCategoryCodeIdentification>
+               <b:MerchantContractIdentification>0</b:MerchantContractIdentification>
+               <b:MerchantSlipMessage/>
+               <b:MerchantType/>
+               <b:MessageTypeIdentification>0610</b:MessageTypeIdentification>
+               <b:NaturalPersonIdentification>0</b:NaturalPersonIdentification>
+               <b:NaturalPersonName/>
+               <b:NetworkInternationalIdentifier>0</b:NetworkInternationalIdentifier>
+               <b:NetworkManagementInformationCode>0</b:NetworkManagementInformationCode>
+               <b:NumberOfOrderGuide/>
+               <b:OdometerValue>0</b:OdometerValue>
+               <b:OriginalDataElements/>
+               <b:PIN/>
+               <b:POSEntryMode/>
+               <b:PersonalIdentificationNumber/>
+               <b:PointOfServiceConditionCode>0</b:PointOfServiceConditionCode>
+               <b:PointOfServiceEntryMode>0</b:PointOfServiceEntryMode>
+               <b:PointOfServicePINConditionCode>0</b:PointOfServicePINConditionCode>
+               <b:PrimaryAccountNumberExtended/>
+               <b:PrimaryAccountNumberExtendedCountryCode>0</b:PrimaryAccountNumberExtendedCountryCode>
+               <b:PrimaryBitmap>0</b:PrimaryBitmap>
+               <b:ProcessingIdentification>300000</b:ProcessingIdentification>
+               <b:ResponseCode>56</b:ResponseCode>
+               <b:ResponseIdentification>0</b:ResponseIdentification>
+               <b:ResponseMessageTypeIdentification/>
+               <b:RetrievalReferenceNumber>154651338</b:RetrievalReferenceNumber>
+               <b:ReturnMessage i:nil="true"/>
+               <b:ReversalReasonDescription/>
+               <b:ReversalReasonIdentification>0</b:ReversalReasonIdentification>
+               <b:SecondaryBitmap>0</b:SecondaryBitmap>
+               <b:SecurityRelatedControlInformation>0</b:SecurityRelatedControlInformation>
+               <b:ServiceRestrictionCode/>
+               <b:SettlementAmount>0</b:SettlementAmount>
+               <b:SettlementCode>0</b:SettlementCode>
+               <b:SettlementConversionRate>0</b:SettlementConversionRate>
+               <b:SettlementCurrencyCode>0</b:SettlementCurrencyCode>
+               <b:SettlementDate>0001-01-01T00:00:00</b:SettlementDate>
+               <b:SettlementFeeAmount>0</b:SettlementFeeAmount>
+               <b:SettlementProcessingFeeAmount>0</b:SettlementProcessingFeeAmount>
+               <b:Solution/>
+               <b:StockcardNumber/>
+               <b:SunnelAuthorizationRequestIdentification>0</b:SunnelAuthorizationRequestIdentification>
+               <b:SystemTrace>154651</b:SystemTrace>
+               <b:SystemsTraceAuditNumber i:nil="true"/>
+               <b:TagNumber/>
+               <b:Track1/>
+               <b:Track2/>
+               <b:Track3/>
+               <b:TransactionAmount>0</b:TransactionAmount>
+               <b:TransactionCurrencyCode>76</b:TransactionCurrencyCode>
+               <b:TransactionDate>2014-08-28T00:00:00</b:TransactionDate>
+               <b:TransactionFeeAmount>0</b:TransactionFeeAmount>
+               <b:TransactionProcessingFeeAmount>0</b:TransactionProcessingFeeAmount>
+               <b:TransactionTime>2014-08-29T12:46:51</b:TransactionTime>
+               <b:TransmissionDate>0001-01-01T00:00:00</b:TransmissionDate>
+               <b:TransmissionDateTime>0001-01-01T00:00:00</b:TransmissionDateTime>
+               <b:TransmissionTime>2014-08-28T12:46:51</b:TransmissionTime>
+               <b:UserIdentification/>
+               <b:VehicleEquipmentIdentification>0</b:VehicleEquipmentIdentification>
+            </Item>
+         </ISO8583ExecuteResult>
+      </ISO8583ExecuteResponse>
+   </s:Body>
+</s:Envelope>

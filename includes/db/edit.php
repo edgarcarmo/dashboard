@@ -51,6 +51,26 @@
 			    $sqlUpdate = "UPDATE `advogados` SET `oab` =  '$oab', `oabuf` =  '$oabuf', `name` =  '$name', `cpf` =  '$cpf', `phone` =  '$phone', `cellphone` =  '$cellphone', `email` =  '$email', `cep` =  '$cep', `address` =  '$address', `number` =  '$number', `complement` =  '$complement', `neighborhood` =  '$neighborhood', `city` =  '$city', `state` =  '$state' WHERE `id` = '$id'";
 			    break;
 		    }
+		    case 'contas': {
+		    	$id = isset($_POST['id']) ? $_POST['id'] : "";
+		    	$account = isset($_POST["account"]) ? $_POST["account"] : "";
+				$value = isset($_POST["value"]) ? moeda($_POST["value"]) : "";
+				$available = isset($_POST["available"]) ? moeda($_POST["available"]) : "";
+				$folderserver = isset($_POST["folderserver"]) ? $_POST["folderserver"] : "";
+				$process = isset($_POST["process"]) ? $_POST["process"] : "";
+				$stick = isset($_POST["stick"]) ? $_POST["stick"] : "";
+				$comarca = isset($_POST["comarca"]) ? $_POST["comarca"] : "";
+			    $sql = "SELECT `id`, `account` FROM `contas` WHERE `account` = '$account' AND `id` <> '$id'";
+			    $sqlUpdate = "UPDATE `contas` SET `account` =  '$account', `available` =  '$available', `folderserver` =  '$folderserver', `process` =  '$process', `stick` =  '$stick', `comarca` =  '$comarca' WHERE `id` = '$id'";
+			  	$autores = isset($_POST["autor"]) ? $_POST["autor"] : "";
+			  	$removeAutor = "DELETE FROM `autor` WHERE `conta` = $id";
+				$reus = isset($_POST["reu"]) ? $_POST["reu"] : "";
+				$removeReu = "DELETE FROM `reu` WHERE `conta` = $id";
+				$adv = isset($_POST["advId"]) ? $_POST["advId"] : "";
+				$removeAdv = "DELETE FROM `advogados_contas` WHERE `conta` = $id";
+				$printError = "A conta ".$account;
+			    break;
+		    }
 		    default: {
 		    	echo null;
 		    }
@@ -88,6 +108,33 @@
 	    if(!mysql_num_rows($resultado) > 0) {
 
 			$resultadoUpdate = mysql_query($sqlUpdate, $conexao) or die ("Erro na seleção da tabela.");
+
+			switch ($type) {
+			    case 'contas': {
+					$insert = true;
+					$remove = true;
+
+					$resultadoAutor = mysql_query($removeAutor, $conexao);
+					foreach($autores as $value) {
+							$sqlInsertAutor = "INSERT INTO `autor` (`conta`, `name`) VALUES (".$id.", '$value')";
+							$resultadoInsertAutor = mysql_query($sqlInsertAutor, $conexao) or die ("Erro na seleção da tabela.");
+						}
+
+					$resultadoReu = mysql_query($removeReu, $conexao);
+					foreach($reus as $value) {
+						$sqlInsertReu = "INSERT INTO `reu` (`conta`, `name`) VALUES (".$id.", '$value')";
+						$resultadoInsertReu = mysql_query($sqlInsertReu, $conexao) or die ("Erro na seleção da tabela.");
+					}
+
+					$resultadoAdv = mysql_query($removeAdv, $conexao);
+					foreach($adv as $value) {
+						$sqlInsertAdv = "INSERT INTO `advogados_contas` (`conta`, `advogado`) VALUES (".$id.", ".$value.")";
+						$resultadoInsertAdv = mysql_query($sqlInsertAdv, $conexao) or die ("Erro na seleção da tabela.");
+					}
+					include_once("upload.php");
+					break;
+			    }
+		  	}
 
 			if ($resultadoUpdate === TRUE) {
 			    header('location:../../'.$type.'.php');

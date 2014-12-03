@@ -56,9 +56,9 @@
     <?php include_once("includes/template/scripts.php"); ?>
     <script type="text/javascript">
       function operateFormatter(value, row, index) {
-        var url = encodeURI("includes/modal/contas_edit.php?id="+row.id+"&account="+row.account+"&value="+row.value+"&available="+row.available+"&folderserver="+row.folderserver+"&process="+row.process+"&stick="+row.stick+"&comarca="+row.comarca);
+        var url = encodeURI("contas_edit.php?id="+row.id);
         return [
-            '<a class="edit ml10" title="Edit" href="'+url+'" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#myModal">',
+            '<a class="edit ml10" title="Edit" href="'+url+'">',
                 '<i class="glyphicon glyphicon-edit"></i>',
             '</a>',
             '<a class="remove ml10" href="javascript:void(0)" title="Remove">',
