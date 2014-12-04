@@ -214,6 +214,18 @@
             <div class="panel-heading">
               <h3 class="panel-title">Arquivos</h3>
             </div>
+            <table class="table table-striped table-bordered" id="listAdv">
+              <tr>
+                <th>Ação</th>
+                <th>Nome</th>
+                <th>Tamanho</th>
+              </tr>
+              <?php
+                while ($valor = mysql_fetch_array($resultadoFiles)) {
+                  echo ('<tr id="file'.$valor['id'].'"><th class="text-center"><a class="btn-default ml10" href="#" onclick="removeFile('.$valor['id'].')" title="Remover arquivo"><span class="glyphicon glyphicon-minus-sign"></span></a></span><a class="btn-default ml10" href="includes/db/donwloadFile.php?arquivo='.$valor['name'].'" title="Baixar arquivo"><span class="glyphicon glyphicon-download-alt"></span></a></span><input type="hidden" value="'.$valor['id'].'"></th><th>'.$valor['name'].'</th><th>'.$valor['size'].'</th></tr>');
+                }
+               ?>
+            </table>
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-12">

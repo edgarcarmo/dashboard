@@ -68,6 +68,7 @@
 				$removeReu = "DELETE FROM `reu` WHERE `conta` = $id";
 				$adv = isset($_POST["advId"]) ? $_POST["advId"] : "";
 				$removeAdv = "DELETE FROM `advogados_contas` WHERE `conta` = $id";
+				$fileRemove = isset($_POST["fileRemove"]) ? $_POST["fileRemove"] : "";
 				$printError = "A conta ".$account;
 			    break;
 		    }
@@ -131,6 +132,20 @@
 						$sqlInsertAdv = "INSERT INTO `advogados_contas` (`conta`, `advogado`) VALUES (".$id.", ".$value.")";
 						$resultadoInsertAdv = mysql_query($sqlInsertAdv, $conexao) or die ("Erro na seleção da tabela.");
 					}
+
+					foreach($fileRemove as $value) {
+						$selectFile = "SELECT * FROM `files` WHERE `id` = $value";
+						$resultadoFile = mysql_query($selectFile, $conexao);
+
+						$removeFile = "DELETE FROM `files` WHERE `id` = $value";
+						mysql_query($removeFile, $conexao);
+						
+						$_UP['pasta'] = '../../files/';
+						while($row = mysql_fetch_array($resultadoFile)) {
+							array_map('unlink', glob($_UP['pasta'].$row['name']));
+	    				}
+					}
+					$row['id'] = $id;
 					include_once("upload.php");
 					break;
 			    }

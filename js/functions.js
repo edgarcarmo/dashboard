@@ -132,6 +132,14 @@ function removeReu(id){
     }
 }
 
+function removeFile(id){
+  var resp = confirm("Confirma a exclusão?");
+    if(resp){
+        $("#file"+id).remove();
+        $("#edit_sumbit").append('<input type="hidden" name="fileRemove[]" value="'+id+'"/>')
+    }
+}
+
 function rowStyle(row, index) {
     var classes = ['active'];
 

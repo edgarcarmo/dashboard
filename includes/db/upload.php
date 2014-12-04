@@ -6,7 +6,7 @@
   $_UP['tamanho'] = 1024 * 1024 * 2; // 2Mb
 
   // Array com as extensões permitidas
-  $_UP['extensoes'] = array('jpg', 'png', 'gif', 'txt', 'csv', 'xls', 'xlsx', 'doc', 'docx');
+  $_UP['extensoes'] = array('jpg', 'png', 'gif', 'txt', 'ppt', 'pptx', 'xls', 'xlsx', 'doc', 'docx', 'zip', 'rar', 'pdf');
 
   // Renomeia o arquivo? (Se true, o arquivo será salvo como .jpg e um nome único)
   $_UP['renomeia'] = false;
@@ -26,7 +26,7 @@
     // Faz a verificação da extensão do arquivo
     $extensao = strtolower(end(explode('.', $name[$i])));
     if (array_search($extensao, $_UP['extensoes']) === false) {
-      $error = "Por favor, envie arquivos com as seguintes extensões: jpg, png, gif, txt, csv, xls, xslx, doc ou docx";
+      $error = "Por favor, envie arquivos com as seguintes extensões: jpg, png, gif, txt, ppt, pptx, xls, xslx, doc, docx, zip, rar ou pdf";
       header('location:../../error.php?error='.$error."&url=".$url);
     }
 
@@ -49,7 +49,7 @@
 
     // Depois verifica se é possível mover o arquivo para a pasta escolhida
       if (move_uploaded_file($tmp_name[$i], $_UP['pasta'] . $nome_final)) {
-        $sqlInsertFile = "INSERT INTO `files` (`conta`, `name`, `size`) VALUES (".$row['id'].", '".$name[$i]."', '$nome_final')";
+        $sqlInsertFile = "INSERT INTO `files` (`conta`, `name`, `size`) VALUES (".$row['id'].", '$nome_final', '".$size[$i]."')";
         $resultadoInsertFile = mysql_query($sqlInsertFile, $conexao) or die ("Erro na seleção da tabela.");
       } else {
     // Não foi possível fazer o upload, provavelmente a pasta está incorreta
