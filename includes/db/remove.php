@@ -36,6 +36,8 @@
 	    	$resultadoAdv = mysql_query($sqlAdv, $conexao);
 	    	$sqlFiles = "DELETE FROM `files` WHERE `conta` = $id";
 	    	$resultadoFiles = mysql_query($sqlFiles, $conexao);
+	    	$_UP['pasta'] = '../../files/';
+	    	array_map('unlink', glob($_UP['pasta'].$id."_*.*"));
 	    	break;
 	    }
 	    default: {

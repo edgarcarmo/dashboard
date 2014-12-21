@@ -31,8 +31,12 @@ function dashboard($scope, $http, $filter){
 
   $scope.autores= [];
 
-  $scope.addAutor = function(){
-    $scope.name = $('#autorNew').val();
+  $scope.addAutor = function(name){
+    if(name != null){
+      $scope.name = name;
+    } else {
+      $scope.name = $('#autorNew').val();
+    }
     if($scope.name != null && $scope.name != '' ){
       $scope.valid = true;
       for(var i=0; i < $scope.autores.length; i++){
@@ -56,8 +60,12 @@ function dashboard($scope, $http, $filter){
 
   $scope.reus= [];
 
-  $scope.addReu = function(){
-    $scope.name = $('#reuNew').val();
+  $scope.addReu = function(name){
+    if(name != null){
+      $scope.name = name;
+    } else {
+      $scope.name = $('#reuNew').val();
+    }
     if($scope.name != null && $scope.name != '' ){
       $scope.valid = true;
       for(var i=0; i < $scope.reus.length; i++){
@@ -121,6 +129,14 @@ function removeReu(id){
   var resp = confirm("Confirma a exclusão?");
     if(resp){
         $("#adv"+id).remove();
+    }
+}
+
+function removeFile(id){
+  var resp = confirm("Confirma a exclusão?");
+    if(resp){
+        $("#file"+id).remove();
+        $("#edit_sumbit").append('<input type="hidden" name="fileRemove[]" value="'+id+'"/>')
     }
 }
 
