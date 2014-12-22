@@ -26,6 +26,10 @@
 				    . "ORDER BY account asc";
 	    	break;
 	    }
+	    case 'processos': {
+	    	$sql = "SELECT";
+	    	break;
+	    }
 	    default: {
 	    	echo null;
 	    	break;

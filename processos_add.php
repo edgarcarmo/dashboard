@@ -92,10 +92,10 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="principal">Principal <span class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="left" title="Marcar como principal"></span></label>
+                    <label for="principal">Principal <span class="glyphicon glyphicon-question-sign" title="Permite marcar este processo como principal na conta."></span></label>
                     <div class="checkbox">
                       <label>
-                        <input type="checkbox" value="0">Marcar como principal
+                        <input type="checkbox" value="0">Processo principal
                       </label>
                     </div>
                   </div>
@@ -235,13 +235,19 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="proposta_inicial">Proposta Inicial</label>
-                    <input type="text" class="form-control">
+                    <div class="input-group">
+                      <span class="input-group-addon">R$</span>
+                      <input type="text" id="proposta_inicial" name="proposta_inicial" class="form-control" maxlength="17" required>
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="data_proposta">Data da Proposta</label>
-                    <input type="text" class="form-control">
+                    <div class="input-group date">
+                      <input type="text" id="data_proposta" name="data_proposta" class="form-control" maxlength="17" required>
+                      <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -249,14 +255,20 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="data_fechameto">Data do Fechamento</label>
-                    <input type="text" class="form-control">
+                    <label for="valor_aquisicao">Valor da Aquisição</label>
+                    <div class="input-group">
+                      <span class="input-group-addon">R$</span>
+                      <input type="text" id="valor_aquisicao" name="valor_aquisicao" class="form-control" maxlength="17" required>
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="valor_aquisicao">Valor da Aquisição</label>
-                    <input type="text" class="form-control">
+                    <label for="data_fechameto">Data do Fechamento</label>
+                    <div class="input-group date">
+                      <input type="text" id="data_fechamento" name="data_fechamento" class="form-control" maxlength="17" required>
+                      <span class="input-group-addon glyphicon glyphicon-calendar"></span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -283,7 +295,10 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <label for="honorarios">Honorários Extras</label>
-                    <input type="text" class="form-control">
+                    <div class="input-group">
+                      <span class="input-group-addon">R$</span>
+                      <input type="text" id="valor_aquisicao" name="valor_aquisicao" class="form-control" maxlength="17" required>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -329,7 +344,7 @@
             </div>
           </div>
           <div class="pull-right">
-            <a href="contas.php" type="button" class="btn btn-default btn_cancel">Cancelar</a>
+            <a href="processos.php" type="button" class="btn btn-default btn_cancel">Cancelar</a>
             <button type="submit" class="btn btn-success">Salvar</button>
           </div>
         </div>
@@ -353,6 +368,13 @@
               "   {caption}\n" +
               "</div>"
           }
+      });
+
+      $(".input-group.date").datepicker({
+        format: "dd/mm/yyyy",
+        language: "pt-BR",
+        todayHighlight: true,
+        autoclose: true
       });
     </script>
     <?php include_once("includes/template/ga.php"); ?>

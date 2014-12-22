@@ -7,7 +7,9 @@
     <?php include_once("includes/template/style.php"); ?>
   </head>
   <body ng-controller="dashboard" id="dashboard">
-    <?php include_once("includes/template/menu.php"); ?>
+    <?php 
+      include_once("includes/template/menu.php"); 
+    ?>
     <div class="container">
       <div class="col-md-6">
         <h1>Contas</h1>
@@ -23,16 +25,16 @@
                   data-show-toggle="true" data-pagination="true">
               <thead>
                   <tr>
-                      <th data-field="state" data-checkbox="true" data-halign="center" data-align="center"></th>
-                      <th data-field="id" data-visible="false" data-halign="center" data-align="center">Item ID</th>
-                      <th data-field="account" data-halign="center" data-align="center" data-sortable="true">Conta</th>
-                      <th data-field="value" data-halign="center" data-align="center" data-sortable="true">Valor</th>
-                      <th data-field="available" data-halign="center" data-align="center" data-sortable="true">Valor Dispon&#237;vel</th>
-                      <th data-field="folderserver" data-visible="false" data-halign="center" data-align="center" data-sortable="true">Pasta no Servidor</th>
-                      <th data-field="process" data-halign="center" data-align="center" data-sortable="true">Processo</th>
-                      <th data-field="stick" data-halign="center" data-align="center" data-sortable="true">Vara</th>
-                      <th data-field="name" data-halign="center" data-align="center" data-sortable="true">Comarca</th>
-                      <th data-field="operate" data-formatter="operateFormatter" data-events="operateEvents" data-halign="center" data-align="center">A&ccedil;&otilde;es</th>
+                    <th data-field="state" data-checkbox="true" data-halign="center" data-align="center"></th>
+                    <th data-field="id" data-visible="false" data-halign="center" data-align="center">Item ID</th>
+                    <th data-field="account" data-halign="center" data-align="center" data-sortable="true">Conta</th>
+                    <th data-field="value" data-halign="center" data-align="center" data-sortable="true">Valor</th>
+                    <th data-field="available" data-halign="center" data-align="center" data-sortable="true">Valor Dispon&#237;vel</th>
+                    <th data-field="folderserver" data-visible="false" data-halign="center" data-align="center" data-sortable="true">Pasta no Servidor</th>
+                    <th data-field="process" data-halign="center" data-align="center" data-sortable="true">Processo</th>
+                    <th data-field="stick" data-halign="center" data-align="center" data-sortable="true">Vara</th>
+                    <th data-field="name" data-halign="center" data-align="center" data-sortable="true">Comarca</th>
+                    <th data-field="operate" data-formatter="operateFormatter" data-events="operateEvents" data-halign="center" data-align="center">A&ccedil;&otilde;es</th>
                   </tr>
               </thead>
           </table>
